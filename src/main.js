@@ -19,6 +19,7 @@ import Toolbar from "primevue/toolbar";
 import Listbox from "primevue/listbox";
 import Divider from "primevue/divider";
 import InputText from "primevue/inputtext";
+import ScrollPanel from "primevue/scrollpanel";
 
 createApp(App)
     .use(PrimeVue, { ripple: true })
@@ -33,5 +34,6 @@ createApp(App)
     .component('pv-listbox',Listbox)
     .component('pv-divider',Divider)
     .component('pv-inputext',InputText)
+    .component('pv-scrollpanel',ScrollPanel)
     .mount('#app')
 
