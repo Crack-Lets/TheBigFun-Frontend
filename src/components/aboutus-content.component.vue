@@ -1,5 +1,5 @@
 <template>
-    <div class="card flex justify-content-center">
+    <div class= "card flex justify-content-center">
 
         <p class="arriba">
             <img alt="user header" src="src/assets/resources/logo.png" />
@@ -33,7 +33,6 @@
                             a sus preferencias de tipos de eventos.
                         </p>
                     </template>
-
                 </pv-card>
             </div>
         </div>
@@ -69,6 +68,8 @@ div{
 }
 
 .arriba{
+
     margin-top: 60px;
 }
+
 </style>
