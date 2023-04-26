@@ -17,6 +17,9 @@ import Menubar from "primevue/menubar";
 import SelectButton from "primevue/selectbutton";
 import Toolbar from "primevue/toolbar";
 import Listbox from "primevue/listbox";
+import Divider from "primevue/divider";
+import InputText from "primevue/inputtext";
+import ScrollPanel from "primevue/scrollpanel";
 
 createApp(App)
     .use(PrimeVue, { ripple: true })
@@ -33,3 +36,4 @@ createApp(App)
     .component('pv-inputext',InputText)
     .component('pv-scrollpanel',ScrollPanel)
     .mount('#app')
+
