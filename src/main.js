@@ -29,5 +29,7 @@ createApp(App)
     .component('pv-menubar', Menubar)
     .component('pv-toolbar', Toolbar)
     .component('pv-listbox',Listbox)
+    .component('pv-divider',Divider)
+    .component('pv-inputext',InputText)
+    .component('pv-scrollpanel',ScrollPanel)
     .mount('#app')
-
