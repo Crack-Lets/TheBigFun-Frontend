@@ -1,7 +1,7 @@
 <template>
     <div class= "card flex justify-content-center">
 
-        <p class="arriba">
+        <p class="arriba" >
             <img alt="user header" src="src/assets/resources/logo.png" />
         </p>
 
@@ -12,7 +12,7 @@
                 <pv-card style="width: 35em" >
 
                     <template #title>
-                        <p class="title1">Nosotros</p>
+                        <p class="title1"> Nosotros </p>
                     </template>
 
                     <template #subtitle>
@@ -68,7 +68,6 @@ div{
 }
 
 .arriba{
-
     margin-top: 60px;
 }
 
