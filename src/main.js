@@ -17,6 +17,7 @@ import Menubar from "primevue/menubar";
 import SelectButton from "primevue/selectbutton";
 import Toolbar from "primevue/toolbar";
 import Listbox from "primevue/listbox";
+import Divider from "primevue/divider";
 
 createApp(App)
     .use(PrimeVue, { ripple: true })
@@ -29,5 +30,6 @@ createApp(App)
     .component('pv-menubar', Menubar)
     .component('pv-toolbar', Toolbar)
     .component('pv-listbox',Listbox)
+    .component('pv-divider',Divider)
     .mount('#app')
 
