@@ -1,6 +1,11 @@
 <template>
-
   <navbar-content></navbar-content>
+
+
+
+
+
+
 
 
   <footer-content class="footer"></footer-content>
