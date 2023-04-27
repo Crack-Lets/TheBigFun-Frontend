@@ -1,5 +1,7 @@
 <template>
-  <navbar-content></navbar-content>
+    <div><navbar-content></navbar-content></div>
+    <div><update-profile-content></update-profile-content></div>
+    <div><footer-content class="footer"></footer-content></div>
 
 
 
@@ -8,15 +10,17 @@
 
 
 
-  <footer-content class="footer"></footer-content>
+
+
 </template>
 
 
 <script>
 import NavbarContent from "./components/navbar-content.component.vue";
 import FooterContent from "./components/footer-content.component.vue";
+import UpdateProfileContent from "@/components/updateprofile-content.component.vue";
 export default {
-  components: {FooterContent, NavbarContent}
+  components: {UpdateProfileContent, FooterContent, NavbarContent}
 }
 </script>
 
@@ -28,7 +32,7 @@ export default {
 
 .footer{
   position: absolute;
-  bottom: 0px;
+
   width: 100%;
 
 }
