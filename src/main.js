@@ -20,7 +20,7 @@ import Listbox from "primevue/listbox";
 import Divider from "primevue/divider";
 import InputText from "primevue/inputtext";
 import ScrollPanel from "primevue/scrollpanel";
-
+import DataTable from "primevue/datatable";
 createApp(App)
     .use(PrimeVue, { ripple: true })
     .component('pv-card', Card)
@@ -35,5 +35,6 @@ createApp(App)
     .component('pv-divider',Divider)
     .component('pv-inputext',InputText)
     .component('pv-scrollpanel',ScrollPanel)
+    .component('pv-datatable', DataTable)
     .mount('#app')
 
