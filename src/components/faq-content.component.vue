@@ -73,7 +73,6 @@ export default {
         margin: 0 auto;
         padding: 50px;
         align-content:center;
-        display:flex;
         left:50%;
         justify-content:center;
     }

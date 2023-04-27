@@ -1,22 +1,20 @@
 <template>
-  <navbar-content></navbar-content>
-
-
-
-
-
-
-
-
-  <footer-content class="footer"></footer-content>
+    <div>
+        <navbar-content></navbar-content>
+        <br>
+        <faq-content></faq-content>
+        <br>
+        <footer-content class="footer"></footer-content>
+    </div>
 </template>
 
 
 <script>
 import NavbarContent from "./components/navbar-content.component.vue";
 import FooterContent from "./components/footer-content.component.vue";
+import FaqContent from "@/components/faq-content.component.vue";
 export default {
-  components: {FooterContent, NavbarContent}
+  components: {FaqContent, FooterContent, NavbarContent}
 }
 </script>
 
@@ -27,10 +25,9 @@ export default {
 <style scoped>
 
 .footer{
-  position: absolute;
+
   bottom: 0px;
   width: 100%;
-
 }
 
 </style>
