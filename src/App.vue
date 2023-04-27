@@ -27,7 +27,6 @@ export default {
 <style scoped>
 
 .footer{
-  position: absolute;
   bottom: 0px;
   width: 100%;
 
