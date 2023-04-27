@@ -7,8 +7,8 @@
         </div>
 
         <div class="content">
-            <div class="profile-pic">
-                <img src="public/ya.jpg" alt="profile" style="border-radius: 600px; width: 485px;">
+            <div class="image-container">
+                <img alt="profile-pic" src="public/ya.jpg">
             </div>
 
             <div class="info">
@@ -75,6 +75,7 @@ export default {
     text-align: justify;
     background: #ffffff;
     margin-bottom: 30px;
+    margin-left:30px;
 }
 
 .container h3 {
@@ -105,13 +106,21 @@ export default {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-}
 
-.profile-pic {
-    margin-right: 350px;
+}
+.image-container{
+    display:flex;
+    justify-content: center;
+    margin-right:220px;
     margin-bottom: 100px;
-    max-width: 100%;
+}
+.image-container img{
+
     height: auto;
+    border-radius: 600px;
+    max-width: 485px;
+    width:100%
+
 }
 
 .info {
@@ -133,19 +142,34 @@ export default {
         flex-direction: column;
         align-items: center;
     }
+    .title h1{
+        margin-top:135px;
 
-    .profile-pic {
-        margin-right: 0;
+    }
+    .image-container{
+        margin-right: 0px;
+        margin-top: 65px;
+        display:flex;
         margin-bottom: 30px;
+    }
+    .image-container img {
+        border-radius:600px;
+        max-width:100%;
+        width:40%;
+
+
     }
 
     .container {
         width: 90%;
+
     }
 
+
     .title h1 {
-        margin-left: 20px;
-        width: auto;
+        margin-left:auto;
+        margin-right:auto;
+        text-align:center;
     }
 }
 </style>
