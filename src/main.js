@@ -22,6 +22,8 @@ import InputText from "primevue/inputtext";
 import ScrollPanel from "primevue/scrollpanel";
 import DataTable from "primevue/datatable";
 import Column from "primevue/column";
+import Textarea from "primevue/textarea";
+
 createApp(App)
     .use(PrimeVue, { ripple: true })
     .component('pv-card', Card)
@@ -38,5 +40,7 @@ createApp(App)
     .component('pv-scrollpanel',ScrollPanel)
     .component('pv-datatable', DataTable)
     .component('pv-column', Column)
+    .component('pv-textarea', Textarea)
+
     .mount('#app')
 
