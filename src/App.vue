@@ -3,7 +3,7 @@
 
 
 
-
+ <userlogin-content-component></userlogin-content-component>
 
 
 
@@ -15,8 +15,9 @@
 <script>
 import NavbarContent from "./components/navbar-content.component.vue";
 import FooterContent from "./components/footer-content.component.vue";
+import UserloginContentComponent from "@/components/userlogin-content.component.vue";
 export default {
-  components: {FooterContent, NavbarContent}
+  components: {FooterContent, NavbarContent,UserloginContentComponent}
 }
 </script>
 
