@@ -3,7 +3,7 @@
 
 
 
-
+  <userregister-content-component></userregister-content-component>
 
 
 
@@ -15,8 +15,9 @@
 <script>
 import NavbarContent from "./components/navbar-content.component.vue";
 import FooterContent from "./components/footer-content.component.vue";
+import UserregisterContentComponent from "@/components/userregister-content-component.vue";
 export default {
-  components: {FooterContent, NavbarContent}
+  components: {FooterContent, NavbarContent,UserregisterContentComponent}
 }
 </script>
 
