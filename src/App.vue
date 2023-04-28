@@ -17,7 +17,6 @@ import FooterContent from "./components/footer-content.component.vue";
 import AboutusContentComponent from "@/components/aboutus-content.component.vue";
 
 export default {
-
   components: {FooterContent, NavbarContent,AboutusContentComponent}
 }
 </script>
