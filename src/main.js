@@ -23,6 +23,7 @@ import ScrollPanel from "primevue/scrollpanel";
 import DataTable from "primevue/datatable";
 import Column from "primevue/column";
 import Textarea from "primevue/textarea";
+import InputNumber from "primevue/inputnumber";
 
 createApp(App)
     .use(PrimeVue, { ripple: true })
@@ -41,6 +42,6 @@ createApp(App)
     .component('pv-datatable', DataTable)
     .component('pv-column', Column)
     .component('pv-textarea', Textarea)
-
+    .component('pv-inputnumber', InputNumber)
     .mount('#app')
 
