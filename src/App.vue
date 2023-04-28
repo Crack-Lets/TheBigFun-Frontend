@@ -2,7 +2,7 @@
   <navbar-content></navbar-content>
 
 
-
+  <organizereventlist-content-component></organizereventlist-content-component>
 
 
 
@@ -15,8 +15,9 @@
 <script>
 import NavbarContent from "./components/navbar-content.component.vue";
 import FooterContent from "./components/footer-content.component.vue";
+import OrganizereventlistContentComponent from "@/components/organizereventlist-content.component.vue";
 export default {
-  components: {FooterContent, NavbarContent}
+  components: {FooterContent, NavbarContent,OrganizereventlistContentComponent}
 }
 </script>
 
