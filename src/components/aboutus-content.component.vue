@@ -1,5 +1,7 @@
 <template>
 
+    <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
+
     <div class="card">
 
         <pv-scrollpanel style="width: 100%; height: 475px">
@@ -55,6 +57,7 @@ export default {
 
 
 <style scoped>
+
 div{
     padding:8px;
     margin:auto;
@@ -62,20 +65,27 @@ div{
 
 .title1{
     text-align: center;
-    color: rgba(83, 16, 92, 1);
     font-size:40px;
+
+    font-family: "Nunito", sans-serif;
+    color: rgba(83, 16, 92, 0.96);
 }
+
 .subs{
     text-align: justify;
     font-size:15px;
+    font-family: "Nunito", sans-serif;
+
 }
 
 .paragraphs{
     text-align: justify;
     font-size:17px;
+    font-family: "Nunito", sans-serif;
 }
 
 .arriba{
     margin-top: 60px;
 }
+
 </style>

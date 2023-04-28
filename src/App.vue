@@ -2,8 +2,7 @@
   <navbar-content></navbar-content>
 
 
-
-
+  <AboutusContentComponent></AboutusContentComponent>
 
 
 
@@ -15,8 +14,11 @@
 <script>
 import NavbarContent from "./components/navbar-content.component.vue";
 import FooterContent from "./components/footer-content.component.vue";
+import AboutusContentComponent from "@/components/aboutus-content.component.vue";
+
 export default {
-  components: {FooterContent, NavbarContent}
+
+  components: {FooterContent, NavbarContent,AboutusContentComponent}
 }
 </script>
 
