@@ -18,6 +18,7 @@ import FooterContent from "./components/footer-content.component.vue";
 import OrganizereventlistContentComponent from "@/components/organizereventlist-content.component.vue";
 
 export default {
+
   components: {FooterContent, NavbarContent,OrganizereventlistContentComponent}
 }
 </script>
