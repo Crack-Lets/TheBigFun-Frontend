@@ -9,7 +9,7 @@
             <div class="background">
 
                 <div class="title">
-                    <h1>Mis eventos activos</h1>
+                    <h1>Mis eventos activos </h1>
                 </div>
 
                 <div class="datatable" >
