@@ -25,6 +25,7 @@ import Column from "primevue/column";
 import Textarea from "primevue/textarea";
 import InputNumber from "primevue/inputnumber";
 import Calendar from "primevue/calendar";
+import Dropdown from "primevue/dropdown";
 
 createApp(App)
     .use(PrimeVue, { ripple: true })
@@ -45,5 +46,6 @@ createApp(App)
     .component('pv-textarea', Textarea)
     .component('pv-inputnumber', InputNumber)
     .component('pv-calendar',Calendar)
+    .component('pv-dropdown', Dropdown)
     .mount('#app')
 
