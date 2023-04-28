@@ -24,6 +24,7 @@ import DataTable from "primevue/datatable";
 import Column from "primevue/column";
 import Textarea from "primevue/textarea";
 import InputNumber from "primevue/inputnumber";
+import Calendar from "primevue/calendar";
 
 createApp(App)
     .use(PrimeVue, { ripple: true })
@@ -43,5 +44,6 @@ createApp(App)
     .component('pv-column', Column)
     .component('pv-textarea', Textarea)
     .component('pv-inputnumber', InputNumber)
+    .component('pv-calendar',Calendar)
     .mount('#app')
 
