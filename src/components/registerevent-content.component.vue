@@ -8,19 +8,22 @@
             <div class="imgContainer">
                 <img :src="eventImg" alt="user picture" aria-label="Assistant Image" >
                 <br>
-                <pv-button label="Subir Imagen" />
+                <pv-button class="button" label="Subir Imagen"  />
             </div>
             <br>
 
             <div class="inputData"  >
                 <pv-inputext  v-model="nameEvent" type="text" class="inputText p-inputtext-lg" placeholder="Nombre evento"/>
-                <pv-calendar class="calendar " v-model="dateEvent" input-id="dateformat" placeholder="dd-mm-aaaa"/>
-                <pv-calendar class="hour" id="calendar-timeonly" v-model="timeEvent" timeOnly placeholder="hh:mm" />
+                <div class="hourdate">
+                    <pv-calendar class="calendar " v-model="dateEvent" input-id="dateformat" placeholder="dd-mm-aaaa"/>
+                    <pv-calendar class="hour" id="calendar-timeonly" v-model="timeEvent" timeOnly placeholder="hh:mm" />
+                </div>
                 <pv-inputext v-model="addressEvent" type="text" class="inputText p-inputtext-lg" placeholder="Dirección"  />
                 <pv-textarea class="textarea" v-model="description" rows="2" cols="25" placeholder="Descripción del evento"/>
                 <pv-dropdown v-model="selectedTickets" :options="typeTickets" optionLabel="name" placeholder="Seleccione un tipo de entrada" class="dropdown w-full md:w-18rem" />
-                <pv-inputnumber class="maxcapacity" v-model="maxCapacity" inputId="minmax" :min="0" :max="100" placeholder="Capacidad máxima" />
-                <pv-button label="Registar evento" />
+                <pv-inputnumber class="maxcapacity" v-model="maxCapacity" inputId="minmax" :min="0" :max="100" placeholder="Capacidad máxima (100)" />
+                <br>
+                <pv-button class="regtevent" label="Registar evento" />
             </div>
         </div>
 
@@ -78,52 +81,82 @@ img{
     height: 400px;
 
 }
-.inputData{
-    width: 270px;
-    margin-left: 10%;
-
+.button{
+    background-color: transparent;
+    border: 1px solid rgba(83, 16, 92, 0.96);
+    border-radius: 30px;
+    color:rgba(83, 16, 92, 0.96);
+    margin-block: 20px;
+}
+.regtevent{
+    background-color: transparent;
+    border: 1px solid rgba(83, 16, 92, 0.96);
+    border-radius: 30px;
+    color:rgba(83, 16, 92, 0.96);
 
 }
+.inputData{
+    width: 400px;
+    margin-left: 5%;
+    text-align: center;
+}
 .inputText {
-    width: 250px;
+    width: 400px;
     height: 40px;
     margin-bottom: 20px;
     font-family: "Nunito", sans-serif;
     font-style: normal;
+    border-radius: 5px;
+    border: 1px solid rgba(3, 83, 151, 1);
+
+}
+.hourdate{
+    display:flex;
+    width:400px;
 }
 .calendar{
-    width: 250px;
+    width: 200px;
     height: 40px;
     margin-bottom:20px;
     font-family: "Nunito", sans-serif;
     font-style: normal;
+    display:flex;
+    border-radius: 4px;
+    border: 1px solid rgba(3, 83, 151, 1);
 }
 .hour{
-    width: 250px;
+    width: 200px;
     height: 40px;
     margin-bottom:20px;
     font-family: "Nunito", sans-serif;
     font-style: normal;
+    border: 1px solid rgba(3, 83, 151, 1);
+    border-radius: 4px;
 }
 .textarea{
-    width: 250px;
+    width: 400px;
     height: 70px;
     margin-bottom:20px;
     font-family: "Nunito", sans-serif;
     font-style: normal;
+    border: 1px solid rgba(3, 83, 151, 1);
 
 }
 .dropdown{
-    height: 50px;
+
     margin-bottom:20px;
     font-family: "Nunito", sans-serif;
     font-style: normal;
+    border-radius: 5px;
+    border: 1px solid rgba(3, 83, 151, 1);
 }
 .maxcapacity{
     height: 50px;
     margin-bottom:20px;
     font-family: "Nunito", sans-serif;
     font-style: normal;
+    border-radius: 5px;
+    border: 1px solid rgba(3, 83, 151, 1);
 }
 .body{
     display:flex;
