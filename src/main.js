@@ -20,6 +20,12 @@ import Listbox from "primevue/listbox";
 import Divider from "primevue/divider";
 import InputText from "primevue/inputtext";
 import ScrollPanel from "primevue/scrollpanel";
+import DataTable from "primevue/datatable";
+import Column from "primevue/column";
+import Textarea from "primevue/textarea";
+import InputNumber from "primevue/inputnumber";
+import Calendar from "primevue/calendar";
+import Dropdown from "primevue/dropdown";
 
 createApp(App)
     .use(PrimeVue, { ripple: true })
@@ -35,5 +41,11 @@ createApp(App)
     .component('pv-divider',Divider)
     .component('pv-inputext',InputText)
     .component('pv-scrollpanel',ScrollPanel)
+    .component('pv-datatable', DataTable)
+    .component('pv-column', Column)
+    .component('pv-textarea', Textarea)
+    .component('pv-inputnumber', InputNumber)
+    .component('pv-calendar',Calendar)
+    .component('pv-dropdown', Dropdown)
     .mount('#app')
 
