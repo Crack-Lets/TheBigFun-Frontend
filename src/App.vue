@@ -6,7 +6,6 @@
 
  <userlogin-content-component></userlogin-content-component>
 
-  <router-view></router-view>
 
 
 
