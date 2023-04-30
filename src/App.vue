@@ -1,6 +1,7 @@
 <template>
   <navbar-content></navbar-content>
 
+  <router-view></router-view>
 
 
 
@@ -14,7 +15,7 @@ import FooterContent from "./components/footer-content.component.vue";
 
 
 export default {
-  components: {FooterContent, NavbarContent}
+  components: { FooterContent, NavbarContent}
 }
 </script>
 

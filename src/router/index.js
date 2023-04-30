@@ -1,5 +1,9 @@
 import {createRouter, createWebHistory} from "vue-router/dist/vue-router";
-import FooterContentComponent from "../components/footer-content.component.vue";
+import HomeContentComponent from "../components/home-content.component.vue";
+import AboutusContentComponent from "../components/aboutus-content.component.vue";
+import UserloginContentComponent from "../components/userlogin-content.component.vue";
+import UserregisterContentComponent from "../components/userregister-content-component.vue";
+
 
 const router=createRouter({
     history:createWebHistory(import.meta.env.BASE_URL),
@@ -10,17 +14,22 @@ const router=createRouter({
             path: '/home',
             name: 'home',
             alias: '/',
-            //component: FooterContentComponent
+            component: HomeContentComponent
         },
         {
-            path: '/about',
-            name: 'about',
-            //component: AboutComponent
+            path: '/aboutUs',
+            name: 'aboutUs',
+            component: AboutusContentComponent
         },
         {
-            path: '/',
-            name: '',
-            //component: TutorialsComponent
+            path: '/userLogin',
+            name: 'userLogin',
+            component: UserloginContentComponent
+        },
+        {
+            path: '/userRegister',
+            name: 'userRegister',
+            component: UserregisterContentComponent
         }
 
     ]
