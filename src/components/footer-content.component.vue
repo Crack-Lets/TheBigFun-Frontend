@@ -48,7 +48,16 @@
 
 <script>
 export default {
-  name: "footer-content"
+  name: "footer-content",
+
+  data(){
+    return{
+      items:[
+
+      ]
+    }
+  }
+
 }
 </script>
 
