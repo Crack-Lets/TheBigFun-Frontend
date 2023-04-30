@@ -13,19 +13,19 @@
 
             <div class="info">
                 <div class="container">
-                    <h3>Usuario: Kane</h3>
+                    <h3>Usuario: {{userData.username}} </h3>
                 </div>
                 <div class="container">
-                    <h3>Nombre completo: Kevin Oliva</h3>
+                    <h3>Nombre completo: {{userData.fullname}}</h3>
                 </div>
                 <div class="container">
-                    <h3>Correo: kevin.oliva.alva@gmail </h3>
+                    <h3>Correo: {{userData.email}}</h3>
                 </div>
                 <div class="container">
-                    <h3>Telefono: 999563680 </h3>
+                    <h3>Telefono: {{userData.phone}} </h3>
                 </div>
                 <div class="container">
-                    <h3>Dni: 73089923 </h3>
+                    <h3>Dni: {{userData.dni}} </h3>
                 </div>
                 <div class="button-container flex align-items-center justify-content-center">
                     <pv-button class="uptButton" style="width: 153px; height: 50px; border-radius: 25px;">
@@ -39,7 +39,21 @@
 
 <script>
 export default {
-    name: "userprofile-content"
+    name: "userprofile-content",
+    data() {
+        return{
+            userData:{
+                username: "kane",
+                fullname: "Kevin Oliva Alva",
+                email: "kevin.oliva.alva@gmail.com",
+                phone: "999563680",
+                dni: "73089923"
+            }
+
+
+
+        }
+    }
 };
 </script>
 

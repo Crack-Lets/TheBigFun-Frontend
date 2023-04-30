@@ -1,5 +1,6 @@
 <template>
     <div> <navbar-content></navbar-content></div>
+    <div> <userprofile-content></userprofile-content> </div>
     <div><footer-content class="footer"></footer-content></div>
 
 
