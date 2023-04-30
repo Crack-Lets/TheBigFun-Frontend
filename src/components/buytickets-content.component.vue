@@ -6,11 +6,11 @@
         </div>
         <div class="button-container flex align-items-end">
             <pv-button class="payButton" >
-                <a class ="buttonText" href="">PAGAR CON IZIPAY</a>
+                <a class ="buttonText" href="">PAGAR CON TARJETA</a>
             </pv-button>
         </div>
         <div class="imgContainer">
-            <img :src="eventImg" alt="user picture" aria-label="Assistant Image"/>
+            <img :src="eventImg" alt="user picture" style="width: 200px" />
         </div>
         <br>
         <div class="datatable">
@@ -107,7 +107,7 @@ export default {
     font-family: "Nunito", sans-serif;
     font-style: normal;
     font-weight: 800;
-    font-size: 33px;
+    font-size: 29px;
     line-height: 40px;
     color: rgba(83, 16, 92, 0.96);
     text-align: left;
@@ -129,6 +129,7 @@ img{
     justify-content: center;
     margin-left:70px;
     margin-top:-50px;
+
 }
 .datatable pv-datatable{
     width: 100%;
