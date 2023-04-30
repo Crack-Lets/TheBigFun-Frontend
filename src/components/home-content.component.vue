@@ -5,17 +5,10 @@
             <h1>EVENTOS POPULARES</h1>
         </div>
         <div class="imgContainer">
-            <div>
-                <img :src="eventImg" alt="user picture" aria-label="theater image" style="width:250px;margin-left:30px"/>
-                <pv-button>Ver detalles</pv-button>
-            </div>
-            <div>
-                <img :src="eventImg2" alt="theater" aria-label="theater image" style="width:250px"/>
-                <pv-button>Ver detalles</pv-button>
-            </div>
-            <div>
-                <img :src="eventImg3" alt="theater2" aria-label="theater image" style="width:250px"/>
-                <pv-button>Ver detalles</pv-button>
+            <div v-for="event in events">
+                <img :src="event.url" :alt="event.id" aria-label="event image" style="width:250px;margin-left:30px"/>
+                <h3 class="nameEvent">{{event.name}}</h3>
+                <pv-button @click="showDetails(event)">Ver detalles</pv-button>
             </div>
         </div>
     </div>
@@ -26,9 +19,31 @@ export default {
     name: "home-content.component",
     data(){
         return{
-            eventImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqx5gurXNgoiEx8PNnw-AJm7bJz3F1-TLpgA&usqp=CAU",
-            eventImg2: "https://www.curriculumnacional.cl/estudiante/621/articles-144873_imagen_portada.thumb_iCuadrada.jpg",
-            eventImg3: "https://www.cultura.gob.ar/media/uploads/algo_inutil_redes_2023_cuadrada.png"
+            events:[
+                {
+                    id: "1",
+                    name: "Evento 1",
+                    url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqx5gurXNgoiEx8PNnw-AJm7bJz3F1-TLpgA&usqp=CAU",
+                    details: "Descripción del evento Chatarrita"
+                },
+                {
+                    id: "2",
+                    name: "Evento 2",
+                    url: "https://www.curriculumnacional.cl/estudiante/621/articles-144873_imagen_portada.thumb_iCuadrada.jpg",
+                    details: "Descripción del evento 2"
+                },
+                {
+                    id: "3",
+                    name: "Evento 3",
+                    url: "https://www.cultura.gob.ar/media/uploads/algo_inutil_redes_2023_cuadrada.png",
+                    details: "Descripción del evento 3"
+                }
+            ]
+        }
+    },
+    methods: {
+        showDetails(event) {
+            // aqui iria la logica para mostrar los detalles del evento (en caso se requiera)
         }
     }
 }
@@ -50,6 +65,17 @@ export default {
     border-radius: 30px;
 
 }
+.nameEvent{
+    font-family: "Nunito", sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 57px;
+    color: rgba(83, 16, 92, 0.96);
+    text-align: left;
+    margin-top: 5px;
+    margin-left:110px;
+}
 .imgContainer{
     display: flex;
     align-items: center;
@@ -57,6 +83,7 @@ export default {
     margin-right:20px;
     margin-top:100px;
 }
+
 .imgContainer div{
     margin: 0 20px;
 }
