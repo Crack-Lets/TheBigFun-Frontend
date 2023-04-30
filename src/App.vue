@@ -1,18 +1,24 @@
 <template>
-    <navbar-content></navbar-content>
-    <br>
-    <attendancelist-content></attendancelist-content>
-    <br>
-    <footer-content class="footer"></footer-content>
+
+  <navbar-content></navbar-content>
+
+
+
+
+
+  <router-view></router-view>
+
+
+
+  <footer-content class="footer"></footer-content>
 </template>
 
 
 <script>
 import NavbarContent from "./components/navbar-content.component.vue";
 import FooterContent from "./components/footer-content.component.vue";
-import AttendancelistContent from "@/components/attendancelist-content.component.vue";
 export default {
-  components: {AttendancelistContent, FooterContent, NavbarContent}
+  components: {FooterContent, NavbarContent}
 }
 </script>
 
@@ -23,6 +29,7 @@ export default {
 <style scoped>
 
 .footer{
+  position: absolute;
   bottom: 0px;
   width: 100%;
 

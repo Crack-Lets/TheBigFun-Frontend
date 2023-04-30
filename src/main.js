@@ -26,9 +26,12 @@ import Textarea from "primevue/textarea";
 import InputNumber from "primevue/inputnumber";
 import Calendar from "primevue/calendar";
 import Dropdown from "primevue/dropdown";
+import router from "./router";
+
 
 createApp(App)
     .use(PrimeVue, { ripple: true })
+    .use(router)
     .component('pv-card', Card)
     .component('pv-button', Button)
     .component('pv-select-button', SelectButton)
