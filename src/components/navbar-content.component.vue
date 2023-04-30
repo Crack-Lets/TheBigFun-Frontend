@@ -10,11 +10,25 @@
 
 
     <template #end>
-      <pv-button class="pvb" label="Home" aria-label="Home" text/>
+<!--      <pv-button class="pvb" label="Home" aria-label="Home" text/>
       <pv-button class="pvb" label="About Us" aria-label="About Us" text/>
       <pv-button class="pvb" label="Events" aria-label="Events" text/>
       <pv-button class="pvb" label="Sign Up" aria-label="Sign Up" text/>
-      <pv-button class="pvb" label="Sign In" aria-label="Sign In" severity="danger"/>
+      <pv-button class="pvb" label="Sign In" aria-label="Sign In" severity="danger"/>-->
+
+      <div class="flex-column">
+        <router-link v-for="item in items"
+                     :to="item.to"
+                     custom
+                     v-slot="{navigate, href}"
+                     :key="item.label">
+          <pv-button
+              class="p-button-text"
+              :href="href"
+              @click="navigate">{{ item.label }}</pv-button>
+        </router-link>
+      </div>
+
     </template>
 
   </pv-toolbar>
@@ -23,9 +37,26 @@
 
 <script>
 export default {
-  name: "navbar-content"
+  name: "navbar-content",
+
+  data() {
+    return {
+      items: [
+        { label: 'Home', to: "" },
+        { label: 'About Us', to: '' },
+        { label: 'Events', to: '' },
+        { label: 'Sign Up', to: '' },
+        { label: 'Sign In', to: '' },
+      ]
+    }
+  }
+
 }
 </script>
+
+
+
+
 
 <style scoped>
 
