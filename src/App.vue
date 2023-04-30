@@ -2,6 +2,8 @@
   <navbar-content></navbar-content>
 
 
+
+
   <footer-content class="footer"></footer-content>
 </template>
 
@@ -9,6 +11,7 @@
 <script>
 import NavbarContent from "./components/navbar-content.component.vue";
 import FooterContent from "./components/footer-content.component.vue";
+
 
 export default {
   components: {FooterContent, NavbarContent}
