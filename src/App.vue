@@ -1,7 +1,7 @@
 <template>
   <navbar-content></navbar-content>
-
-
+<br>
+<faq-content></faq-content>
 
 
 
@@ -12,9 +12,10 @@
 <script>
 import NavbarContent from "./components/navbar-content.component.vue";
 import FooterContent from "./components/footer-content.component.vue";
+import FaqContent from "@/components/faq-content.component.vue";
 
 export default {
-  components: {FooterContent, NavbarContent}
+  components: {FaqContent, FooterContent, NavbarContent}
 }
 </script>
 
