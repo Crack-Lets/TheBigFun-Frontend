@@ -4,11 +4,11 @@
         <div class="title">
             <h1>Lista de Asistentes</h1>
         </div>
-        <div v-for="(item, index) in asisNames" :key="index" class="attendee" >
+        <div v-for="assistant in assistants" class="attendee" >
             <i class="pi pi-circle-fill" style="color:rgba(83, 16, 92, 0.96); font-size: 0.5rem "/>
-            <img :src="asisImg[index]" alt="user picture" aria-label="Assistant Image"  style="border-radius: 100px"/>
+            <img :src="assistant.image" alt="user picture" aria-label="Assistant Image"  style="border-radius: 100px"/>
             <div class="names">
-                {{asisNames[index]}}
+                {{assistant.name}}
             </div>
         </div>
 
@@ -21,8 +21,28 @@ export default {
     name: "attendancelist-content",
     data(){
         return{
-            asisNames:['Remi Adam Purrel','Riwsey Otiniano Lizama','Elsa Martinez Paz','Katherine Valdez Parra '],
-            asisImg:['https://randomuser.me/api/portraits/men/25.jpg','https://randomuser.me/api/portraits/men/26.jpg','https://randomuser.me/api/portraits/women/43.jpg','https://randomuser.me/api/portraits/women/78.jpg']
+            assistants:[
+                {
+                    id:"1",
+                    name: "Remi Adam Purrel",
+                    image: "https://randomuser.me/api/portraits/men/25.jpg"
+                },
+                {
+                    id:"2",
+                    name: "Riwsey Otiniano Lizama",
+                    image: "https://randomuser.me/api/portraits/men/26.jpg"
+                },
+                {
+                    id:"3",
+                    name: "Elsa Martinez Paz",
+                    image: "https://randomuser.me/api/portraits/women/43.jpg"
+                },
+                {
+                    id:"4",
+                    name: "Katherine Valdez Parra",
+                    image: "https://randomuser.me/api/portraits/women/78.jpg"
+                }
+            ]
         }
     }
 }
@@ -37,13 +57,14 @@ export default {
     line-height: 57px;
     color: rgba(83, 16, 92, 0.96);
     text-align: center;
-    margin-top: 5px;
+    margin-top: 0px;
 }
 
 .background {
     background: rgba(99, 99, 163, 0.35);
     border-radius: 30px;
     padding: 30px;
+
 }
 .names{
     width: 313px;
@@ -71,14 +92,15 @@ img{
 .attendee {
     display: flex;
     align-items: center;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     margin-left: 50px;
-    margin-top: 50px;
+    margin-top: 30px;
 
 }
 @media (min-width: 768px) {
     .background {
         max-width: 800px;
+        height: 550px;
         margin: 0 auto;
         padding: 50px;
     }

@@ -1,7 +1,9 @@
 <template>
-  <navbar-content></navbar-content>
-  <attendancelist-content></attendancelist-content>
-  <footer-content class="footer"></footer-content>
+    <navbar-content></navbar-content>
+    <br>
+    <attendancelist-content></attendancelist-content>
+    <br>
+    <footer-content class="footer"></footer-content>
 </template>
 
 
