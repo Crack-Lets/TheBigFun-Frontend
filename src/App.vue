@@ -1,10 +1,12 @@
 <template>
+
   <navbar-content></navbar-content>
 
 
 
   <userregister-content-component></userregister-content-component>
 
+  <router-view></router-view>
 
 
 
