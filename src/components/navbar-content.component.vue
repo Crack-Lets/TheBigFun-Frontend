@@ -1,33 +1,24 @@
 <template>
-  <div class="card relative z-2">
-    <pv-menubar class="bg-primary">
-      <template #start>
-        <img alt="logo" src="./assets/resources/logo.png" height="40" class="mr-2" />
-      </template>
-      <template #content></template>
-      <template #end>
-        <div class="w-full md:block md:w-auto" id="navbar-default">
-          <ul class="flex flex-col md:p-0 mt-4 md:mt-0">
-            <li>
-              <a href="#">Home</a>
-            </li>
-            <li>
-              <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
-            </li>
-            <li>
-              <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Services</a>
-            </li>
-            <li>
-              <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
-            </li>
-            <li>
-              <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </template>
-    </pv-menubar>
-  </div>
+
+  <pv-toolbar class="shadow-3 pt-2 pb-2">
+
+    <template #start>
+      <img src="src/assets/resources/logo.png">
+      <h2 class="mt-0 mb-0 pt-0 pb-0">The Big Fun</h2>
+
+    </template>
+
+
+    <template #end>
+      <pv-button class="pvb" label="Home" aria-label="Home" text/>
+      <pv-button class="pvb" label="About Us" aria-label="About Us" text/>
+      <pv-button class="pvb" label="Events" aria-label="Events" text/>
+      <pv-button class="pvb" label="Sign Up" aria-label="Sign Up" text/>
+      <pv-button class="pvb" label="Sign In" aria-label="Sign In" severity="danger"/>
+    </template>
+
+  </pv-toolbar>
+
 </template>
 
 <script>
@@ -37,5 +28,18 @@ export default {
 </script>
 
 <style scoped>
+
+img{
+  height: 50px;
+}
+
+.pvb{
+  margin-left: 10px;
+}
+
+pv-toolbar{
+  height: 50px;
+}
+
 
 </style>
