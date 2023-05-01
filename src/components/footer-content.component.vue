@@ -5,13 +5,17 @@
     <div class="left">
       <h3>Explore</h3>
       <div class="contentt">
-        <a href="#">
+<!--        <a href="#">
           <pv-button class="pvtt text-black-alpha-90" label="FAQs" text/>
-        </a>
+        </a>-->
 
-        <a href="#">
+        <router-link to="/faqs">
+          <pv-button class="pvtt text-black-alpha-90" label="FAQs" text/>
+        </router-link>
+
+        <router-link to="/#">
           <pv-button class="pvtt text-black-alpha-90" label="Privacy politics" text/>
-        </a>
+        </router-link>
 
       </div>
     </div>
@@ -48,7 +52,16 @@
 
 <script>
 export default {
-  name: "footer-content"
+  name: "footer-content",
+
+  data(){
+    return{
+      items:[
+
+      ]
+    }
+  }
+
 }
 </script>
 

@@ -42,11 +42,11 @@ export default {
   data() {
     return {
       items: [
-        { label: 'Home', to: "" },
-        { label: 'About Us', to: '' },
+        { label: 'Home', to: '/home' },
+        { label: 'About Us', to: '/aboutUs' },
         { label: 'Events', to: '' },
-        { label: 'Sign Up', to: '' },
-        { label: 'Sign In', to: '' },
+        { label: 'Sign Up', to: '/userRegister' },
+        { label: 'Sign In', to: '/userLogin' },
       ]
     }
   }

@@ -1,8 +1,62 @@
 {
   "events": [
+    {
+      "id": 1,
+      "name": "Chatarrita",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqx5gurXNgoiEx8PNnw-AJm7bJz3F1-TLpgA&usqp=CAU",
+      "date": "12/10/2023",
+      "hour": "8pm",
+      "cost": "20$",
+      "aforo": "200"
+    },
+    {
+      "id": 2,
+      "name": "Japanese expressions",
+      "img": "https://www.curriculumnacional.cl/estudiante/621/articles-144873_imagen_portada.thumb_iCuadrada.jpg",
+      "date": "1/08/2023",
+      "hour": "12pm",
+      "cost": "45$",
+      "aforo": "350"
+    },
+    {
+      "id": 3,
+      "name": "Algo Inutil",
+      "img": "https://www.cultura.gob.ar/media/uploads/algo_inutil_redes_2023_cuadrada.png",
+      "date": "23/06/2023",
+      "hour": "9pm",
+      "cost": "12$",
+      "aforo": "90"
+    },
+    {
+      "id": 4,
+      "name": "Algo Inutil",
+      "img": "https://www.cultura.gob.ar/media/uploads/algo_inutil_redes_2023_cuadrada.png",
+      "date": "23/06/2023",
+      "hour": "9pm",
+      "cost": "12$",
+      "aforo": "90"
+    }
 
   ],
   "users": [
+    {
+      "id": 1,
+      "username": "pedropablo",
+      "fullname": "Pedro Pablo",
+      "password": "pedropablo",
+      "doc": "87654321",
+      "email": "pedropablo@gmail.com"
+    },
+    {
+      "id": 1,
+      "username": "alejotoledo",
+      "fullname": "Alejandro Toledo",
+      "password": "alejotoledo",
+      "doc": "17654321",
+      "email": "alejotoledo@gmail.com"
+    }
+
+
 
   ]
 }
