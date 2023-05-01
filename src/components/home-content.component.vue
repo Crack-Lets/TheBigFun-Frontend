@@ -1,26 +1,23 @@
 <template>
   <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
+
+
   <div class="background">
     <div class="title">
       <h1>EVENTOS POPULARES</h1>
     </div>
-
     <div class="totalContent">
-      <div class="eventsContainer" v-for="event in events">
-        <div>
-          <img :src="event.img" :alt="event.name" aria-label="theater image" style="width:250px;margin-left:30px"/>
-          <h2>{{event.name}}</h2>
-          <pv-button>Ver detalles</pv-button>
-        </div>
-        <!--      <div>
-                <img :src="eventImg2" alt="theater" aria-label="theater image" style="width:250px"/>
-                <pv-button>Ver detalles</pv-button>
-              </div>
-              <div>
-                <img :src="eventImg3" alt="theater2" aria-label="theater image" style="width:250px"/>
-                <pv-button>Ver detalles</pv-button>
-              </div>-->
-      </div>
+        <pv-scrollpanel style="width: 100%; height: 500px;">
+            <div class="eventsContainer">
+                <div class="prueba" v-for="(event, index) in events">
+                    <img :src="event.img" :alt="event.name" aria-label="theater image" style="width:250px; border-radius:30px; "/>
+                    <h2 class="eventName">{{event.name}}</h2>
+                    <pv-button @click="showDetails(event)">Ver detalles</pv-button>
+                    <div v-if="(index+1)%3 ==0" class="row-end"></div>
+                </div>
+            </div>
+        </pv-scrollpanel>
+
     </div>
 
   </div>
@@ -77,20 +74,35 @@ export default
 .background {
     background: rgba(99, 99, 163, 0.35);
     border-radius: 30px;
+    height:700px;
+}
+.eventName{
+    font-family: "Nunito", sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 57px;
+    color: rgba(83, 16, 92, 0.96);
 
 }
 .eventsContainer{
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+    grid-gap: 20px;
+    grid-auto-rows: minmax(200px, auto);
   width: 33%;
+}
+.row-end{
+    grid-column-end: -1;
+}
+.prueba{
+    text-align: center;
+    padding: 30px;
+}
 
-}
-.imgContainer div{
-    margin: 0 20px;
-}
+
 button{
-    display: block;
-    margin-top:50px;
-    margin-left:100px;
+    margin-top:20px;
     background-color: rgba(83, 16, 92, 0.96);
     color: white;
     border: none;
@@ -105,12 +117,10 @@ button{
 }
 @media (min-width: 768px) {
     .background {
-        max-width: 1000px;
+        max-width: 1500px;
+        max-height: 2000px;
         margin: 0 auto;
         padding: 50px;
-    }
-    img{
-        margin-left: 40px;
     }
 }
 
