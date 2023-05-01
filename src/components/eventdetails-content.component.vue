@@ -6,7 +6,7 @@
         </div>
         <div class="body">
             <div class="imgContainer">
-                <img :src="img" alt="user picture" aria-label="Assistant Image" >
+                <img :src="img" alt="Event Image" aria-label="Event Image" >
             </div>
             <br>
             <div class="information">
