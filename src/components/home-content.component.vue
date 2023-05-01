@@ -9,6 +9,7 @@
       <div class="eventsContainer" v-for="event in events">
         <div>
           <img :src="event.img" :alt="event.name" aria-label="theater image" style="width:250px;margin-left:30px"/>
+          <h2>{{event.name}}</h2>
           <pv-button>Ver detalles</pv-button>
         </div>
         <!--      <div>
