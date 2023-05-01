@@ -8,6 +8,10 @@
 
     </template>
 
+    <template #center>
+      <h3 class="mt-0 mb-0 pt-0 pb-0"></h3>
+    </template>
+
 
     <template #end>
 <!--      <pv-button class="pvb" label="Home" aria-label="Home" text/>
