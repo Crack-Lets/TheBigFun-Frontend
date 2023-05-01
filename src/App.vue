@@ -1,5 +1,5 @@
 <template>
-  <navbar-content></navbar-content>
+  <navbar-content class="navbar"></navbar-content>
 
   <router-view></router-view>
 
@@ -30,6 +30,10 @@ export default {
   bottom: 0px;
   width: 100%;
 
+}
+
+.navbar{
+  margin-bottom: 50px;
 }
 
 </style>
