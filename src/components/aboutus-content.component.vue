@@ -4,7 +4,7 @@
 
     <div class="card">
 
-        <pv-scrollpanel style="width: 100%; height: 475px">
+        <pv-scrollpanel style="width: 100%">
 
             <div class="card flex justify-content-center">
 
@@ -86,7 +86,7 @@ div{
 }
 
 .arriba{
-    margin-top: 60px;
+    margin-top: 20px;
 }
 
 </style>

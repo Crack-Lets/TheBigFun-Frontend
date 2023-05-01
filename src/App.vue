@@ -1,7 +1,11 @@
 <template>
-  <navbar-content class="navbar"></navbar-content>
+  <navbar-content></navbar-content>
 
-  <router-view></router-view>
+  <div class="content">
+    <router-view></router-view>
+  </div>
+
+
 
 
 
@@ -32,8 +36,13 @@ export default {
 
 }
 
-.navbar{
-  margin-bottom: 50px;
+.content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid red;
+  height:80vh;
 }
+
 
 </style>
