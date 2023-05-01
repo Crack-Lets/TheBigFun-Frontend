@@ -4,7 +4,7 @@
 
     <div class="card" >
 
-        <pv-scroolpanel style="width: 100%; height: 475px">
+        <pv-scrollpanel style="width: 100%; height: 475px">
 
             <div class="card flex justify-content-center">
 
@@ -18,16 +18,15 @@
 
                     <div class="flex flex-column gap-2">
                         <label for="username" class="title" >Username</label>
-                        <pv-inputtext class="container" id="username" v-model="user" aria-describedby="username-help" />
+                        <pv-inputext type="text" class="container" id="username" v-model="user" aria-describedby="username-help" />
                         <small id="username-help" class="espacio">Ingresa tu nombre de usuario.</small>
                     </div>
 
                     <div class="flex flex-column gap-2">
                         <label for="password" class="title">Contraseña</label>
-                        <pv-inputtext  class="container" id="password" v-model="password" toggleMask aria-describedby="password-help" />
+                        <pv-inputext  type="text" class="container" id="password" v-model="password" toggleMask aria-describedby="password-help" />
                         <small id="password-help" class="espacio">Ingresa tu contraseña.</small>
                     </div>
-
 
                     <div class="card flex justify-content-center">
 
@@ -50,7 +49,7 @@
                 </div>
 
             </div>
-        </pv-scroolpanel>
+        </pv-scrollpanel>
     </div>
 </template>
 
