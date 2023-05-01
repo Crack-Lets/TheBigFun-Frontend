@@ -1,18 +1,23 @@
 <template>
   <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
+
+
   <div class="background">
     <div class="title">
       <h1>EVENTOS POPULARES</h1>
     </div>
-
     <div class="totalContent">
-      <div class="eventsContainer" v-for="event in events">
-        <div class="prueba">
-          <img :src="event.img" :alt="event.name" aria-label="theater image" style="width:250px"/>
-          <h2 class="eventName">{{event.name}}</h2>
-            <pv-button @click="showDetails(event)">Ver detalles</pv-button>
-        </div>
-      </div>
+        <pv-scrollpanel style="width: 100%; height: 500px;">
+            <div class="eventsContainer">
+                <div class="prueba" v-for="(event, index) in events">
+                    <img :src="event.img" :alt="event.name" aria-label="theater image" style="width:250px"/>
+                    <h2 class="eventName">{{event.name}}</h2>
+                    <pv-button @click="showDetails(event)">Ver detalles</pv-button>
+                    <div v-if="(index+1)%3 ==0" class="row-end"></div>
+                </div>
+            </div>
+        </pv-scrollpanel>
+
     </div>
 
   </div>
@@ -69,6 +74,7 @@ export default
 .background {
     background: rgba(99, 99, 163, 0.35);
     border-radius: 30px;
+    height:700px;
 }
 .eventName{
     font-family: "Nunito", sans-serif;
@@ -80,13 +86,20 @@ export default
 
 }
 .eventsContainer{
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+    grid-gap: 20px;
+    grid-auto-rows: minmax(200px, auto);
   width: 33%;
+}
+.row-end{
+    grid-column-end: -1;
 }
 .prueba{
     text-align: center;
     padding: 30px;
 }
+
 
 button{
     margin-top:20px;
@@ -104,7 +117,8 @@ button{
 }
 @media (min-width: 768px) {
     .background {
-        max-width: 1000px;
+        max-width: 1500px;
+        max-height: 2000px;
         margin: 0 auto;
         padding: 50px;
     }
