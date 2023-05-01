@@ -8,7 +8,7 @@
             <h1>EVENTOS POPULARES</h1>
         </div>
         <div class="totalContent">
-            <pv-scrollpanel style="width: 100%; height: 500px; ">
+            <pv-scrollpanel style="width: 100%; height: 500px; margin-right:-50px;">
                 <div class="eventsContainer">
                     <div class="prueba" v-for="(event, index) in events">
                         <img :src="event.img" :alt="event.name" aria-label="theater image" style="width:250px; border-radius:30px; "/>
@@ -93,6 +93,8 @@ export default
     grid-gap: 20px;
     grid-auto-rows: minmax(200px, auto);
     width: 33%;
+    align-items: center;
+    margin-top:30px;
 
 
 }
@@ -102,11 +104,12 @@ export default
 .prueba{
     padding: 10px;
     text-align:center;
+
 }
 
 
 button{
-    margin-top:20px;
+
     background-color: rgba(83, 16, 92, 0.96);
     color: white;
     border: none;
@@ -117,6 +120,7 @@ button{
     font-weight: 800;
     font-size: 16px;
     cursor: pointer;
+
 
 }
 @media (min-width: 768px) {
@@ -131,6 +135,7 @@ button{
 
 .totalContent{
     display: flex;
+    justify-content: center;
 }
 
 </style>
