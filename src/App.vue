@@ -1,8 +1,8 @@
 <template>
   <navbar-content></navbar-content>
 
-  <div class="content">
-    <router-view></router-view>
+  <div>
+    <router-view/>
   </div>
 
 
@@ -16,10 +16,11 @@
 <script>
 import NavbarContent from "./components/navbar-content.component.vue";
 import FooterContent from "./components/footer-content.component.vue";
+import ViewEvents from "./components/viewevents-content.component.vue"
 
 
 export default {
-  components: { FooterContent, NavbarContent}
+  components: {ViewEvents, FooterContent, NavbarContent}
 }
 </script>
 
