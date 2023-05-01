@@ -1,26 +1,27 @@
 <template>
-  <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
+
+    <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
 
 
-  <div class="background">
-    <div class="title">
-      <h1>EVENTOS POPULARES</h1>
-    </div>
-    <div class="totalContent">
-        <pv-scrollpanel style="width: 100%; height: 500px;">
-            <div class="eventsContainer">
-                <div class="prueba" v-for="(event, index) in events">
-                    <img :src="event.img" :alt="event.name" aria-label="theater image" style="width:250px; border-radius:30px; "/>
-                    <h2 class="eventName">{{event.name}}</h2>
-                    <pv-button @click="showDetails(event)">Ver detalles</pv-button>
-                    <div v-if="(index+1)%3 ==0" class="row-end"></div>
+    <div class="background">
+        <div class="title">
+            <h1>EVENTOS POPULARES</h1>
+        </div>
+        <div class="totalContent">
+            <pv-scrollpanel style="width: 100%; height: 500px; ">
+                <div class="eventsContainer">
+                    <div class="prueba" v-for="(event, index) in events">
+                        <img :src="event.img" :alt="event.name" aria-label="theater image" style="width:250px; border-radius:30px; "/>
+                        <h2 class="eventName">{{event.name}}</h2>
+                        <pv-button @click="showDetails(event)">Ver detalles</pv-button>
+                        <div v-if="(index+1)%3 ==0" class="row-end"></div>
+                    </div>
                 </div>
-            </div>
-        </pv-scrollpanel>
+            </pv-scrollpanel>
+
+        </div>
 
     </div>
-
-  </div>
 </template>
 
 <script>
@@ -28,33 +29,33 @@ import {EventsApiService} from "../thebigfun/services/events-api.service";
 
 export default
 {
-  name: "home-content.component",
-  data() {
-    return {
-      events: [],
-      errors:[],
-      eventsApi:new EventsApiService(),
-    };
-  },
+    name: "home-content.component",
+    data() {
+        return {
+            events: [],
+            errors:[],
+            eventsApi:new EventsApiService(),
+        };
+    },
 
-  created() {
-    this.getEvents();
-    console.log("Created")
+    created() {
+        this.getEvents();
+        console.log("Created")
 
-  },
+    },
 
-  methods:{
-    getEvents(){
-      this.eventsApi.getEvents()
-          .then(response=>{
-            this.events=response.data;
-            console.log("Datos recuperados : ",response.data)
-          })
-          .catch(e=>{
-            this.errors.push(e)
-          })
+    methods:{
+        getEvents(){
+            this.eventsApi.getEvents()
+                .then(response=>{
+                    this.events=response.data;
+                    console.log("Datos recuperados : ",response.data)
+                })
+                .catch(e=>{
+                    this.errors.push(e)
+                })
+        }
     }
-  }
 }
 </script>
 
@@ -74,7 +75,8 @@ export default
 .background {
     background: rgba(99, 99, 163, 0.35);
     border-radius: 30px;
-    height:700px;
+    width: 1000px;
+
 }
 .eventName{
     font-family: "Nunito", sans-serif;
@@ -86,18 +88,20 @@ export default
 
 }
 .eventsContainer{
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
     grid-gap: 20px;
     grid-auto-rows: minmax(200px, auto);
-  width: 33%;
+    width: 33%;
+
+
 }
 .row-end{
     grid-column-end: -1;
 }
 .prueba{
-    text-align: center;
-    padding: 30px;
+    padding: 10px;
+    text-align:center;
 }
 
 
@@ -119,13 +123,14 @@ button{
     .background {
         max-width: 1500px;
         max-height: 2000px;
-        margin: 0 auto;
+        margin-top: 50px;
+        margin-left:450px;
         padding: 50px;
     }
 }
 
 .totalContent{
-  display: flex;
+    display: flex;
 }
 
 </style>
