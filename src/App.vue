@@ -1,27 +1,25 @@
 <template>
-    <div><navbar-content></navbar-content></div>
-    <div><home-content></home-content></div>
-    <div><footer-content class="footer"></footer-content></div>
+  <navbar-content></navbar-content>
+
+  <div class="content">
+    <router-view></router-view>
+  </div>
 
 
 
 
 
-
-
-
-
+  <footer-content class="footer"></footer-content>
 </template>
 
 
 <script>
 import NavbarContent from "./components/navbar-content.component.vue";
 import FooterContent from "./components/footer-content.component.vue";
-import HomeContent from "./components/home-content.component.vue"
 
 
 export default {
-  components: {HomeContent, FooterContent, NavbarContent}
+  components: { FooterContent, NavbarContent}
 }
 </script>
 
@@ -37,5 +35,13 @@ export default {
   width: 100%;
 
 }
+
+.content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height:80vh;
+}
+
 
 </style>
