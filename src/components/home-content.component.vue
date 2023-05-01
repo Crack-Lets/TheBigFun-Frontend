@@ -129,7 +129,7 @@ button{
     .background {
         max-width: 1500px;
         max-height: 2000px;
-        margin-top:50px;
+        margin-top:10px;
         margin-left:auto;
         margin-right:auto;
         padding: 50px;

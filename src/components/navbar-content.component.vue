@@ -9,7 +9,7 @@
     </template>
 
     <template #center>
-      <h3 class="mt-0 mb-0 pt-0 pb-0"></h3>
+      <h3 class="mt-0 mb-0 pt-0 pb-0">{{currentUser.fullname}}</h3>
     </template>
 
 
@@ -51,7 +51,8 @@ export default {
         { label: 'Events', to: '/events' },
         { label: 'Sign Up', to: '/userRegister' },
         { label: 'Sign In', to: '/userLogin' },
-      ]
+      ],
+      currentUser:{}
     }
   }
 

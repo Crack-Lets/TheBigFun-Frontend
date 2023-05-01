@@ -46,9 +46,14 @@
                         <small id="dni-help" class="espacio">Ingresa tu DNI.</small>
                     </div>
 
-                    <div class="button-container flex align-items-center justify-content-center" >
+
+                  <div class="button-container flex align-items-center justify-content-center" >
+                    <pv-button type="submit" :disabled="isDisabled" class="justify-content-center" label="Registrarse" @click="saveUser" style="width: 153px; height: 50px; border-radius: 25px;"/>
+                  </div>
+
+<!--                    <router-link :to="{name:'home',params:{abcd:4}}" class="button-container flex align-items-center justify-content-center" >
                         <pv-button type="submit" :disabled="isDisabled" class="justify-content-center" label="Registrarse" @click="saveUser" style="width: 153px; height: 50px; border-radius: 25px;"/>
-                    </div>
+                    </router-link>-->
 
                 </div>
 
@@ -92,6 +97,7 @@ export default {
           });
       this.currentUser = this.user
       this.user = {};
+      console.log("currentUser : ",this.currentUser)
     }
   },
 

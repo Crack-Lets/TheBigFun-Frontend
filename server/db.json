@@ -36,7 +36,6 @@
       "cost": "12$",
       "aforo": "90"
     },
-
     {
       "id": 5,
       "name": "Algo Inutil",
@@ -46,7 +45,6 @@
       "cost": "12$",
       "aforo": "90"
     },
-
     {
       "id": 6,
       "name": "Algo Inutil",
@@ -83,12 +81,20 @@
       "id": 3
     },
     {
+      "username": "a",
+      "password": "s",
+      "fullname": "f",
+      "email": "d",
+      "doc": "1234",
+      "id": 4
+    },
+    {
       "username": "asf",
       "password": "asdf",
-      "fullname": "sdf",
-      "email": "asdf",
-      "doc": "22312314",
-      "id": 4
+      "fullname": "asdf",
+      "email": "asf",
+      "doc": "2134124",
+      "id": 5
     }
   ]
 }

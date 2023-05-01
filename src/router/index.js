@@ -49,6 +49,12 @@ const router=createRouter({
             name: 'organizerProfile',
             component: OrganizerprofileComponent,
         }
+        // {
+        //     path: '/home/:abcd',
+        //     name: 'home',
+        //     alias: '/',
+        //     component: HomeContentComponent
+        // },
 
     ]
 
