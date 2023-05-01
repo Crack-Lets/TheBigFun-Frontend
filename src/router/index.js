@@ -4,6 +4,7 @@ import AboutusContentComponent from "../components/aboutus-content.component.vue
 import UserloginContentComponent from "../components/userlogin-content.component.vue";
 import UserregisterContentComponent from "../components/userregister-content-component.vue";
 import FaqContentComponent from "../components/faq-content.component.vue";
+import VieweventsContentComponent from "../components/viewevents-content.component.vue";
 
 
 const router=createRouter({
@@ -36,6 +37,11 @@ const router=createRouter({
             path: '/faqs',
             name: 'faqs',
             component: FaqContentComponent
+        },
+        {
+            path: '/events',
+            name: 'events',
+            component: VieweventsContentComponent
         }
 
     ]

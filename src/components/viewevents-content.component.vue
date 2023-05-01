@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import {EventsApiService} from "../thebigfun/services/thebigfun-api.service";
+import {EventsApiService} from "../thebigfun/services/events-api.service";
 export default
 {
     name: "view-events.component",

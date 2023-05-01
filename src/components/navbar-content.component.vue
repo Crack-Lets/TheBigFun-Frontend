@@ -44,7 +44,7 @@ export default {
       items: [
         { label: 'Home', to: '/home' },
         { label: 'About Us', to: '/aboutUs' },
-        { label: 'Events', to: '' },
+        { label: 'Events', to: '/events' },
         { label: 'Sign Up', to: '/userRegister' },
         { label: 'Sign In', to: '/userLogin' },
       ]
