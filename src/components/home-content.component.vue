@@ -1,38 +1,66 @@
 <template>
-    <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
-    <div class="background">
-        <div class="title">
-            <h1>EVENTOS POPULARES</h1>
+  <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
+  <div class="background">
+    <div class="title">
+      <h1>EVENTOS POPULARES</h1>
+    </div>
+
+    <div class="totalContent">
+      <div class="eventsContainer" v-for="event in events">
+        <div>
+          <img :src="event.img" :alt="event.name" aria-label="theater image" style="width:250px;margin-left:30px"/>
+          <pv-button>Ver detalles</pv-button>
         </div>
-        <div class="imgContainer">
-            <div>
-                <img :src="eventImg" alt="user picture" aria-label="theater image" style="width:250px;margin-left:30px"/>
-                <pv-button>Ver detalles</pv-button>
-            </div>
-            <div>
+        <!--      <div>
                 <img :src="eventImg2" alt="theater" aria-label="theater image" style="width:250px"/>
                 <pv-button>Ver detalles</pv-button>
-            </div>
-            <div>
+              </div>
+              <div>
                 <img :src="eventImg3" alt="theater2" aria-label="theater image" style="width:250px"/>
                 <pv-button>Ver detalles</pv-button>
-            </div>
-        </div>
+              </div>-->
+      </div>
     </div>
+
+  </div>
 </template>
 
 <script>
-export default {
-    name: "home-content.component",
-    data(){
-        return{
-            eventImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqx5gurXNgoiEx8PNnw-AJm7bJz3F1-TLpgA&usqp=CAU",
-            eventImg2: "https://www.curriculumnacional.cl/estudiante/621/articles-144873_imagen_portada.thumb_iCuadrada.jpg",
-            eventImg3: "https://www.cultura.gob.ar/media/uploads/algo_inutil_redes_2023_cuadrada.png"
-        }
+import {EventsApiService} from "../thebigfun/services/thebigfun-api.service";
+
+export default
+{
+  name: "home-content.component",
+  data() {
+    return {
+      events: [],
+      errors:[],
+      eventsApi:new EventsApiService(),
+    };
+  },
+
+  created() {
+    this.getEvents();
+    console.log("Created")
+
+  },
+
+  methods:{
+    getEvents(){
+      this.eventsApi.getEvents()
+          .then(response=>{
+            this.events=response.data;
+            console.log("Datos recuperados : ",response.data)
+          })
+          .catch(e=>{
+            this.errors.push(e)
+          })
     }
+  }
 }
 </script>
+
+
 
 <style scoped>
 .title h1 {
@@ -50,12 +78,10 @@ export default {
     border-radius: 30px;
 
 }
-.imgContainer{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right:20px;
-    margin-top:100px;
+.eventsContainer{
+  display: flex;
+  width: 33%;
+
 }
 .imgContainer div{
     margin: 0 20px;
@@ -86,4 +112,9 @@ button{
         margin-left: 40px;
     }
 }
+
+.totalContent{
+  display: flex;
+}
+
 </style>
