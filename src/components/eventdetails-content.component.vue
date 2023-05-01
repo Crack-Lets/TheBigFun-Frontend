@@ -9,7 +9,6 @@
                 <img :src="img" alt="user picture" aria-label="Assistant Image" >
             </div>
             <br>
-
             <div class="information">
                 Fecha: {{date}}
                 <br>
@@ -21,7 +20,7 @@
                 <br>
                 Aforo: {{capacity}}
                 <br>
-                <pv-button class="button" label="Registar evento" />
+                <pv-button class="button" label="Comprar" />
             </div>
         </div>
 
