@@ -4,7 +4,7 @@
 
     <div class="card" >
 
-        <pv-scrollpanel style="width: 100%; height: 475px">
+        <pv-scrollpanel style="width: 100%; height: 435px">
 
             <div class="card flex justify-content-center">
 
@@ -18,31 +18,31 @@
 
                     <div class="flex flex-column gap-2">
                         <label for="username" class="title" >Usuario</label>
-                        <pv-inputtext class="container" id="username" v-model="user" aria-describedby="username-help" />
+                        <pv-inputext type="text" class="container" id="username" v-model="user" aria-describedby="username-help" />
                         <small id="username-help" class="espacio">Ingresa tu nombre de usuario.</small>
                     </div>
 
                     <div class="flex flex-column gap-2">
                         <label for="password" class="title">Contraseña</label>
-                        <pv-inputtext  class="container" id="password" v-model="password" toggleMask aria-describedby="password-help" />
+                        <pv-inputext  type="text" class="container" id="password" v-model="password" toggleMask aria-describedby="password-help" />
                         <small id="password-help" class="espacio">Ingresa tu contraseña.</small>
                     </div>
 
                     <div class="flex flex-column gap-2">
                         <label for="name" class="title">Nombre</label>
-                        <pv-inputtext class="container" id="name" v-model="name" aria-describedby="name-help" />
+                        <pv-inputext type="text" class="container" id="name" v-model="name" aria-describedby="name-help" />
                         <small id="name-help" class="espacio">Ingresa tu nombre.</small>
                     </div>
 
                     <div class="flex flex-column gap-2">
                         <label for="email" class="title">Correo electronico</label>
-                        <pv-inputtext class="container" id="email" v-model="email" aria-describedby="email-help" />
+                        <pv-inputext type="text" class="container" id="email" v-model="email" aria-describedby="email-help" />
                         <small id="email-help" class="espacio">Ingresa tu correo.</small>
                     </div>
 
                     <div class="flex flex-column gap-2">
                         <label for="dni" class="title">DNI</label>
-                        <pv-inputtext class="container" id="dni" v-model="dni" aria-describedby="dni-help" />
+                        <pv-inputext type="text" class="container" id="dni" v-model="dni" aria-describedby="dni-help" />
                         <small id="dni-help" class="espacio">Ingresa tu DNI.</small>
                     </div>
 
