@@ -4,13 +4,16 @@
 
     <div class="card" >
 
-        <pv-scrollpanel style="width: 100%; height: 435px">
+        <pv-scrollpanel style="width: 100%; height: 475px">
 
             <div class="card flex justify-content-center">
 
-                <p class="arriba">
+                <div class="arriba">
+
+                    <h1 class="title">Perfil Organizador</h1>
+
                     <img :src="userData.organizerimage" alt="user header"  />
-                </p>
+                </div>
 
                 <pv-divider layout="vertical" style= "margin-left: 130px"/>
 
@@ -70,9 +73,9 @@ export default {
         return{
             userData:{
                 organizerimage: "src/assets/resources/organizer.png",
-                username: " kane",
-                fullname: " Kevin Oliva Alva",
-                email: " kevin.oliva.alva@gmail.com",
+                username: " LuisLuisama",
+                fullname: " Luis Andres Sanchez Luisama",
+                email: " luis.sanchez.luisama@gmail.com",
                 phone: " 999563680",
                 dni: " 73089923",
                 namecompany: " Stoza",
@@ -91,16 +94,15 @@ export default {
 .arriba{
     margin-top: 10px;
 }
-.espacio{
-    margin-bottom:20px;
-}
+
 .textos{
     font-family: "Nunito", sans-serif;
 }
 .title{
-    text-align: left;
+    text-align: center;
     color: rgba(83, 16, 92, 1);
-    font-size:20px;
+    font-size:30px;
+    font-family: "Nunito", sans-serif;
 }
 
 .container {
