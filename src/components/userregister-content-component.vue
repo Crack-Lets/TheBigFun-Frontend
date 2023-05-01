@@ -4,7 +4,7 @@
 
     <div class="card" >
 
-        <pv-scrollpanel style="width: 100%; height: 650px">
+        <pv-scrollpanel style="width: 100%; height: 570px">
 
             <div class="card flex justify-content-center">
 
@@ -47,9 +47,7 @@
                     </div>
 
                     <div class="button-container flex align-items-center justify-content-center" >
-                        <pv-button class="uptButton justify-content-center" style="width: 153px; height: 50px; border-radius: 25px;">
-                            <a href="" >Registrarse</a>
-                        </pv-button>
+                        <pv-button type="submit" :disabled="isDisabled" class="justify-content-center" label="Registrarse" @click="saveUser" style="width: 153px; height: 50px; border-radius: 25px;"/>
                     </div>
 
                 </div>
@@ -61,33 +59,67 @@
 </template>
 
 <script>
-export default {
-    name: "userregister-content-component",
+import {UsersApiService} from "../thebigfun/services/users-api.service";
 
-    data(){
-        return{
-/*            user:null,
+export default {
+  name: "userregister-content-component",
+
+  data() {
+    return {
+      /*            user:null,
             password:null,
             name:null,
             email:null,
             dni:null,*/
-          user:{}
-
-        }
-    },
-
-    methods:{
+      user: {},
+      currentUser: {},
+      usersApi: new UsersApiService(),
+      //isDisabled:true,
 
     }
+  },
+
+  created() {
+    console.log("primero", this.user.fullname);
+  },
+
+  methods: {
+    saveUser() {
+      console.log(this.user)
+      this.usersApi.create(this.user).then()
+          .catch(e => {
+            console.log(e)
+          });
+      this.currentUser = this.user
+      this.user = {};
+    }
+  },
+
+  computed:{
+    isDisabled(){
+      if(this.user.fullname===undefined || this.user.username===undefined || this.user.password===undefined|| this.user.email===undefined|| this.user.doc===undefined) {
+        return true;
+      }
+      else {
+        return false;
+      }
+    }
+  }
+
+
+
+
+
 
 }
+
+
 </script>
 
 <style scoped>
 
 
 .arriba{
-    margin-top: 10px;
 }
 
 .espacio{
@@ -143,6 +175,10 @@ export default {
     .container {
         width: 90%;
     }
+}
+
+.card{
+  margin-bottom: 50px;
 }
 
 </style>

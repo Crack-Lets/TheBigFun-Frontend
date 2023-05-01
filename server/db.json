@@ -36,7 +36,6 @@
       "cost": "12$",
       "aforo": "90"
     }
-
   ],
   "users": [
     {
@@ -48,15 +47,28 @@
       "email": "pedropablo@gmail.com"
     },
     {
-      "id": 1,
+      "id": 2,
       "username": "alejotoledo",
       "fullname": "Alejandro Toledo",
       "password": "alejotoledo",
       "doc": "17654321",
       "email": "alejotoledo@gmail.com"
+    },
+    {
+      "username": "a",
+      "password": "s",
+      "fullname": "d",
+      "email": "f",
+      "doc": "3",
+      "id": 3
+    },
+    {
+      "username": "asf",
+      "password": "asdf",
+      "fullname": "sdf",
+      "email": "asdf",
+      "doc": "22312314",
+      "id": 4
     }
-
-
-
   ]
 }
