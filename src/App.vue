@@ -1,12 +1,11 @@
 <template>
-
   <navbar-content></navbar-content>
 
+  <div class="content">
+    <router-view></router-view>
+  </div>
 
 
-  <userregister-content-component></userregister-content-component>
-
-  <router-view></router-view>
 
 
 
@@ -17,9 +16,10 @@
 <script>
 import NavbarContent from "./components/navbar-content.component.vue";
 import FooterContent from "./components/footer-content.component.vue";
-import UserregisterContentComponent from "@/components/userregister-content-component.vue";
+
+
 export default {
-  components: {FooterContent, NavbarContent,UserregisterContentComponent}
+  components: { FooterContent, NavbarContent}
 }
 </script>
 
@@ -35,5 +35,13 @@ export default {
   width: 100%;
 
 }
+
+.content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height:80vh;
+}
+
 
 </style>
