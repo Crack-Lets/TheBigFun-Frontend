@@ -2,7 +2,7 @@
     <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
     <div class="background">
         <div class="title">
-            <h1>Lista de Asistentes</h1>
+            <h1>List of Attendees</h1>
         </div>
         <div v-for="assistant in assistants" class="attendee" >
             <i class="pi pi-circle-fill" style="color:rgba(83, 16, 92, 0.96); font-size: 0.5rem "/>

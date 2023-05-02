@@ -2,7 +2,7 @@
     <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
     <div class="background">
         <div class="title">
-            <h1>Registrar evento:</h1>
+            <h1>Register event:</h1>
         </div>
         <div class="body">
             <div class="imgContainer">
@@ -13,15 +13,15 @@
             <br>
 
             <div class="inputData"  >
-                <pv-inputext  v-model="nameEvent" type="text" class="inputText p-inputtext-lg" placeholder="Nombre evento"/>
+                <pv-inputext  v-model="nameEvent" type="text" class="inputText p-inputtext-lg" placeholder="Name Event"/>
                 <div class="hourdate">
                     <pv-calendar class="calendar " v-model="dateEvent" input-id="dateformat" placeholder="dd-mm-aaaa"/>
                     <pv-calendar class="hour" id="calendar-timeonly" v-model="timeEvent" timeOnly placeholder="hh:mm" />
                 </div>
-                <pv-inputext v-model="addressEvent" type="text" class="inputText p-inputtext-lg" placeholder="Dirección"  />
-                <pv-textarea class="textarea" v-model="description" rows="2" cols="25" placeholder="Descripción del evento"/>
-                <pv-dropdown v-model="selectedTickets" :options="typeTickets" optionLabel="name" placeholder="Seleccione un tipo de entrada" class="dropdown w-full md:w-18rem" />
-                <pv-inputnumber class="maxcapacity" v-model="maxCapacity" inputId="minmax" :min="0" :max="100" placeholder="Capacidad máxima (100)" />
+                <pv-inputext v-model="addressEvent" type="text" class="inputText p-inputtext-lg" placeholder="Address"  />
+                <pv-textarea class="textarea" v-model="description" rows="2" cols="25" placeholder="Event description"/>
+                <pv-dropdown v-model="selectedTickets" :options="typeTickets" optionLabel="name" placeholder="Type of ticket" class="dropdown w-full md:w-18rem" />
+                <pv-inputnumber class="maxcapacity" v-model="maxCapacity" inputId="minmax" :min="0" :max="100" placeholder="Max Capacity" />
                 <br>
                 <pv-button class="regtevent" label="Registar evento" />
             </div>

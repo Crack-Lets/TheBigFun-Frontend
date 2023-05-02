@@ -10,15 +10,15 @@
             </div>
             <br>
             <div class="information">
-                Fecha: {{event.date}}
+                Date: {{event.date}}
                 <br>
-                Hora: {{event.hour}}
+                Hour: {{event.hour}}
                 <br>
-                Precio: {{event.cost}}
+                Price: {{event.cost}}
                 <br>
-                Aforo: {{event.aforo}}
+                Capacity: {{event.aforo}}
                 <br>
-                <pv-button class="button" label="Comprar" />
+                <pv-button class="button" label="Buy" />
             </div>
         </div>
 

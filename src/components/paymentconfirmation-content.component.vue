@@ -2,7 +2,7 @@
     <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
     <div class="background">
         <div class="title">
-            <h1>COMPRA EXITOSA</h1>
+            <h1>SUCCESSFUL PURCHASE</h1>
         </div>
         <div class="imgContainer">
             <img :src="eventImg" alt="user picture" aria-label="Assistant Image" style="margin-left: 10px"/>
@@ -11,11 +11,11 @@
         <br>
         <div class="datatable" >
             <pv-datatable :value="tableData" style="border: 3px solid rgba(3, 83, 151, 1);" >
-                <pv-column field="date" header="Fecha"></pv-column>
-                <pv-column field="hour" header="Hora"></pv-column>
-                <pv-column field="nameEvent" header="Nombre del evento" ></pv-column>
-                <pv-column field="qTikects" header="Cantidad tickets" ></pv-column>
-                <pv-column field="qrCode" header="Código QR de la compra"> </pv-column>
+                <pv-column field="date" header="Date"></pv-column>
+                <pv-column field="hour" header="Hour"></pv-column>
+                <pv-column field="nameEvent" header="Name Event" ></pv-column>
+                <pv-column field="qTikects" header="Number of tickets" ></pv-column>
+                <pv-column field="qrCode" header="QR CODE"> </pv-column>
             </pv-datatable>
         </div>
 
