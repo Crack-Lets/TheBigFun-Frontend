@@ -6,6 +6,7 @@ import UserregisterContentComponent from "../components/userregister-content-com
 import FaqContentComponent from "../components/faq-content.component.vue";
 import VieweventsContentComponent from "../components/viewevents-content.component.vue";
 import OrganizerprofileComponent from "../components/organizerprofile-component.vue";
+import EventdetailsContentComponent from "@/components/eventdetails-content.component.vue";
 
 
 const router=createRouter({
@@ -48,6 +49,11 @@ const router=createRouter({
             path: '/organizerProfile',
             name: 'organizerProfile',
             component: OrganizerprofileComponent,
+        },
+        {
+            path: '/eventdetails',
+            name: 'eventdetails',
+            component: EventdetailsContentComponent,
         }
         // {
         //     path: '/home/:abcd',
@@ -55,6 +61,7 @@ const router=createRouter({
         //     alias: '/',
         //     component: HomeContentComponent
         // },
+
 
     ]
 

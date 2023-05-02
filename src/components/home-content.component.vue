@@ -13,7 +13,9 @@
                     <div class="prueba" v-for="(event, index) in events">
                         <img :src="event.img" :alt="event.name" aria-label="theater image" style="width:250px; border-radius:30px; "/>
                         <h2 class="eventName">{{event.name}}</h2>
-                        <pv-button @click="showDetails(event)">Ver detalles</pv-button>
+                        <router-link to="/eventdetails">
+                            <pv-button @click="showDetails(event)">Ver detalles</pv-button>
+                        </router-link>
                         <div v-if="(index+1)%3 ==0" class="row-end"></div>
                     </div>
                 </div>
