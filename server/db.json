@@ -29,12 +29,12 @@
     },
     {
       "id": 4,
-      "name": "Algo Inutil",
-      "img": "https://www.cultura.gob.ar/media/uploads/algo_inutil_redes_2023_cuadrada.png",
-      "date": "23/06/2023",
-      "hour": "9pm",
-      "cost": "12$",
-      "aforo": "90"
+      "name": "Noche de Folclore",
+      "img": "https://cdn.teleticket.com.pe/especiales/eventos2021/img/cancelados/V7424_md.jpg",
+      "date": "05/05/2023",
+      "hour": "10pm",
+      "cost": "26$",
+      "aforo": "130"
     },
     {
       "id": 5,
@@ -71,6 +71,22 @@
       "password": "alejotoledo",
       "doc": "17654321",
       "email": "alejotoledo@gmail.com"
+    },
+    {
+      "username": "diegosant",
+      "password": "diegosant123",
+      "fullname": "Diego Santivanies",
+      "email": "diegosant@gmal.com",
+      "doc": "12345678",
+      "id": 3
+    },
+    {
+      "username": "isasor",
+      "password": "isasor321",
+      "fullname": "Isabella Soriano",
+      "email": "isasor@gmail.com",
+      "doc": "87654321",
+      "id": 4
     }
   ]
 }
