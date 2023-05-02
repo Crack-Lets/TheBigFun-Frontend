@@ -2,11 +2,11 @@
     <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
     <div class="background">
         <div class="title">
-            <h1>COMPRA DE TICKET</h1>
+            <h1>BUY TICKETS</h1>
         </div>
         <div class="button-container flex align-items-end">
             <pv-button class="payButton" >
-                <a class ="buttonText" href="">PAGAR CON TARJETA</a>
+                <a class ="buttonText" href="">Pay by credit card</a>
             </pv-button>
         </div>
         <div class="imgContainer">
@@ -15,16 +15,16 @@
         <br>
         <div class="datatable">
             <pv-datatable class= "tablex" :value="tableData" style="border: 3px solid rgba(3, 83, 151, 1)">
-                <pv-column field="date" header="Fecha"></pv-column>
-                <pv-column field="hour" header="Hora"></pv-column>
-                <pv-column field="nameEvent" header="Nombre del evento"></pv-column>
-                <pv-column field="price" header="Costo"></pv-column>
-                <pv-column field="capacity" header="Aforo"></pv-column>
-                <pv-column field="disponibility" header ="Disponibilidad"></pv-column>
+                <pv-column field="date" header="Date"></pv-column>
+                <pv-column field="hour" header="Hour"></pv-column>
+                <pv-column field="nameEvent" header="Event Name"></pv-column>
+                <pv-column field="price" header="Price"></pv-column>
+                <pv-column field="capacity" header="Capacity"></pv-column>
+                <pv-column field="disponibility" header ="Disponibility"></pv-column>
             </pv-datatable>
         </div>
         <div class="drop ">
-            <h3>Cantidad de tickets</h3>
+            <h3>Number of tickets</h3>
             <pv-dropdown v-model="selectedQuantity" :options="quantitys" optionLabel="quantity" class="dropdown  md:w-18rem"/>
         </div>
 

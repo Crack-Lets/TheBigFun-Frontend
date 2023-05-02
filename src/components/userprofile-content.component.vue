@@ -3,7 +3,7 @@
 
     <section class="profile-container">
         <div class="title">
-            <h1>Perfil de usuario</h1>
+            <h1>USER PROFILE</h1>
         </div>
 
         <div class="content">
@@ -13,23 +13,23 @@
 
             <div class="info">
                 <div class="container">
-                    <h3>Usuario: Kane</h3>
+                    <h3>Username: Kane</h3>
                 </div>
                 <div class="container">
-                    <h3>Nombre completo: Kevin Oliva</h3>
+                    <h3>Full name: Kevin Oliva</h3>
                 </div>
                 <div class="container">
-                    <h3>Correo: kevin.oliva.alva@gmail </h3>
+                    <h3>Email: kevin.oliva.alva@gmail </h3>
                 </div>
                 <div class="container">
-                    <h3>Telefono: 999563680 </h3>
+                    <h3>Phone: 999563680 </h3>
                 </div>
                 <div class="container">
                     <h3>Dni: 73089923 </h3>
                 </div>
                 <div class="button-container flex align-items-center justify-content-center">
                     <pv-button class="uptButton" style="width: 153px; height: 50px; border-radius: 25px;">
-                        <a href="">Actualizar datos</a>
+                        <a href="">update data</a>
                     </pv-button>
                 </div>
             </div>

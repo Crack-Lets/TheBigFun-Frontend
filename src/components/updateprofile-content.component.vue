@@ -3,7 +3,7 @@
 
     <section class="profile-container">
         <div class="title">
-            <h1>Actualización de datos:</h1>
+            <h1>Update Data:</h1>
 
         </div>
 
@@ -14,18 +14,18 @@
 
             <div class="info">
                 <div class="container">
-                    <label for="username">Usuario:</label>
+                    <label for="username">Username:</label>
                     <input type="text" id="username" v-model="userData.username">
                 </div>
                 <div class="container">
-                    <h3>Nombre completo: {{userData.fullname}}</h3>
+                    <h3>Full name: {{userData.fullname}}</h3>
                 </div>
                 <div class="container">
-                    <label for="email">Correo:</label>
+                    <label for="email">Email:</label>
                     <input type="email" id="email" v-model="userData.email">
                 </div>
                 <div class="container">
-                    <label for="phone">Telefono:</label>
+                    <label for="phone">Phone:</label>
                     <input type="tel" id="phone" v-model="userData.phone">
                 </div>
                 <div class="container">
@@ -33,7 +33,7 @@
                 </div>
                 <div class="button-container flex align-items-center justify-content-center">
                     <pv-button class="uptButton" style="width: 140px; height: 45px; border-radius: 25px;" @click="updateUserData">
-                        <a href="">Guardar datos</a>
+                        <a href="">Save Data</a>
                     </pv-button>
                 </div>
             </div>

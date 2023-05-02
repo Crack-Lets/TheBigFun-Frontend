@@ -5,7 +5,7 @@
 
     <div class="background">
         <div class="title">
-            <h1>EVENTOS POPULARES</h1>
+            <h1>POPULAR EVENTS</h1>
         </div>
         <div class="totalContent">
             <pv-scrollpanel style="width: 100%; height: 500px; margin-right:-90px;">
@@ -15,7 +15,7 @@
                         <router-link :to="{name:'eventdetails', params:{event:JSON.stringify(event)}}">
                           <img :src="event.img" :alt="event.name" aria-label="theater image" style="width:250px; border-radius:30px; "/>
                           <h2 class="eventName">{{event.name}}</h2>
-                            <pv-button>Ver detalles</pv-button>
+                            <pv-button>View details</pv-button>
                           <div v-if="(index+1)%3 ==0" class="row-end"></div>
                         </router-link>
 

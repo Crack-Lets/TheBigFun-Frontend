@@ -3,21 +3,21 @@
 
     <div class="background">
         <div class="title">
-            <h1>EVENTOS DISPONIBLES</h1>
+            <h1>AVAILABLE EVENTS</h1>
         </div>
         <div class="totalContent">
             <pv-scrollpanel style="width: 100%; height: 500px;">
                 <div class="eventsContainer" v-for="event in events" :key="event.id">
                     <div class="tableStyle">
                         <pv-datatable class="eventTable" :value="[event]" style="border: 3px solid rgba(3, 83, 151, 1); width:1000px">
-                            <pv-column field="date" header="Fecha"></pv-column>
-                            <pv-column field="hour" header="Hora"></pv-column>
-                            <pv-column field="name" header="Nombre del evento"></pv-column>
-                            <pv-column field="cost" header="Costo"></pv-column>
-                            <pv-column field="aforo" header="Aforo"></pv-column>
+                            <pv-column field="date" header="Date"></pv-column>
+                            <pv-column field="hour" header="Hour"></pv-column>
+                            <pv-column field="name" header="Event Name"></pv-column>
+                            <pv-column field="cost" header="Price"></pv-column>
+                            <pv-column field="aforo" header="Capacity"></pv-column>
                         </pv-datatable>
                       <router-link :to="{name:'eventdetails', params:{event:JSON.stringify(event)}}">
-                        <pv-button>Ver detalles</pv-button>
+                        <pv-button>View details</pv-button>
                       </router-link>
 
                     </div>
