@@ -2,23 +2,21 @@
     <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
     <div class="background">
         <div class="title">
-            <h1>{{nameEvent}}</h1>
+            <h1>{{event.name}}</h1>
         </div>
         <div class="body">
             <div class="imgContainer">
-                <img :src="img" alt="Event Image" aria-label="Event Image" >
+                <img :src="event.img" alt="Event Image" aria-label="Event Image" >
             </div>
             <br>
             <div class="information">
-                Fecha: {{date}}
+                Fecha: {{event.date}}
                 <br>
-                Hora: {{hour}}
+                Hora: {{event.hour}}
                 <br>
-                Ubicación: {{location}}
+                Precio: {{event.cost}}
                 <br>
-                Precio: {{cost}}
-                <br>
-                Aforo: {{capacity}}
+                Aforo: {{event.aforo}}
                 <br>
                 <pv-button class="button" label="Comprar" />
             </div>
@@ -29,18 +27,25 @@
 
 <script>
 export default {
-    name: "eventdetails-content",
-    data() {
-        return {
-            nameEvent: "Chatarrita",
-            img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqx5gurXNgoiEx8PNnw-AJm7bJz3F1-TLpgA&usqp=CAU",
-            date: "12/10/2023",
-            hour: "8pm",
-            cost: "20$",
-            capacity: "200",
-            location: "Av. las fresias 158 la molina"
-        }
+  name: "eventdetails-content",
+
+  data(){
+    return{
+      event:JSON.parse(this.$route.params.event)
     }
+  }
+/*  data() {
+    return {
+                  nameEvent: "Chatarrita",
+                  img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqx5gurXNgoiEx8PNnw-AJm7bJz3F1-TLpgA&usqp=CAU",
+                  date: "12/10/2023",
+                  hour: "8pm",
+                  cost: "20$",
+                  capacity: "200",
+                  location: "Av. las fresias 158 la molina",
+
+    }
+  }*/
 }
 </script>
 

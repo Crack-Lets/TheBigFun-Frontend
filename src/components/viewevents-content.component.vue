@@ -16,7 +16,10 @@
                             <pv-column field="cost" header="Costo"></pv-column>
                             <pv-column field="aforo" header="Aforo"></pv-column>
                         </pv-datatable>
+                      <router-link :to="{name:'eventdetails', params:{event:JSON.stringify(event)}}">
                         <pv-button>Ver detalles</pv-button>
+                      </router-link>
+
                     </div>
 
                 </div>

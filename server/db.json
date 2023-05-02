@@ -71,30 +71,6 @@
       "password": "alejotoledo",
       "doc": "17654321",
       "email": "alejotoledo@gmail.com"
-    },
-    {
-      "username": "a",
-      "password": "s",
-      "fullname": "d",
-      "email": "f",
-      "doc": "3",
-      "id": 3
-    },
-    {
-      "username": "a",
-      "password": "s",
-      "fullname": "f",
-      "email": "d",
-      "doc": "1234",
-      "id": 4
-    },
-    {
-      "username": "asf",
-      "password": "asdf",
-      "fullname": "asdf",
-      "email": "asf",
-      "doc": "2134124",
-      "id": 5
     }
   ]
 }
