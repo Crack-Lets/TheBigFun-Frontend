@@ -20,7 +20,7 @@
                 <div class="info textos ">
 
                     <div class="container">
-                        <h3>User:{{userData.username}} </h3>
+                        <h3>Username:{{userData.username}} </h3>
                     </div>
 
                     <div class="container">

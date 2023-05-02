@@ -19,20 +19,20 @@
                     <div class="flex flex-column gap-2">
                         <label for="username" class="title" >Username</label>
                         <pv-inputext type="text" class="container" id="username" v-model="user" aria-describedby="username-help" />
-                        <small id="username-help" class="espacio">Ingresa tu nombre de usuario.</small>
+                        <small id="username-help" class="espacio">Enter your username</small>
                     </div>
 
                     <div class="flex flex-column gap-2">
-                        <label for="password" class="title">Contraseña</label>
+                        <label for="password" class="title">Password</label>
                         <pv-inputext  type="text" class="container" id="password" v-model="password" toggleMask aria-describedby="password-help" />
-                        <small id="password-help" class="espacio">Ingresa tu contraseña.</small>
+                        <small id="password-help" class="espacio">Enter your password</small>
                     </div>
 
                     <div class="card flex justify-content-center">
 
                         <div class="button-container flex align-items-center justify-content-center" >
                             <pv-button class="uptButton justify-content-center" style="width: 153px; height: 50px; border-radius: 25px;">
-                                <a href="" >Ingresar</a>
+                                <a href="" >Sign in</a>
                             </pv-button>
                         </div>
 
@@ -40,7 +40,7 @@
 
                         <div class="button-container flex align-items-center justify-content-center" >
                             <pv-button class="uptButton justify-content-center" style="width: 153px; height: 50px; border-radius: 25px;">
-                                <a href="" >Registrarse</a>
+                                <a href="" >Sign up</a>
                             </pv-button>
                         </div>
 

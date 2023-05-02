@@ -19,25 +19,25 @@
                         <pv-card style="width: 35em" >
 
                             <template #title>
-                                <p class="title1">Nosotros</p>
+                                <p class="title1">About us</p>
                             </template>
 
                             <template #subtitle>
-                                <li class="subs">Mision: Nuestra misión es facilitar a las personas la búsqueda de eventos sociales y la compra y venta de entradas. Asimismo, Ayudar a los anfitriones a tener un evento rentable.  </li>
+                                <li class="subs">Mission: Our mission is to make it easy for people to find social events and buy and sell tickets. Also, help hosts have a profitable event. </li>
                                 <hr>
-                                <li class="subs">Vision: Ser una aplicación y empresa con reconocimiento nacional e internacional en la publicidad de eventos y en el mercado de las transacciones de entradas. </li>
+                                <li class="subs">Vision: To be an application and company with national and international recognition in event advertising and in the market for ticket transactions.</li>
                             </template>
 
 
 
                             <template #content>
                                 <p class="paragraphs">
-                                    The big fun, es una plataforma de eventos que permite a
-                                    sus usuarios encontrar los eventos que estén cerca a ellos,
-                                    además de que les ofrece comprar entradas para los eventos
-                                    que más les interesen en un solo lugar. Además de que, podra
-                                    ofrecerle a sus usuarios recomendaciones de acuerdo
-                                    a sus preferencias de tipos de eventos.
+                                    The big fun, is an events platform that allows
+                                    your users to find the events that are close to them,
+                                    In addition to offering them to buy tickets for the events
+                                    that interest you most in one place. Besides that, you could
+                                    offer its users recommendations according to
+                                    to your event type preferences.
                                 </p>
                             </template>
 

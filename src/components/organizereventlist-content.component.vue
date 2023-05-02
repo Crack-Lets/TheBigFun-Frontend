@@ -9,16 +9,16 @@
             <div class="background">
 
                 <div class="title">
-                    <h1>Mis eventos activos </h1>
+                    <h1>My active events </h1>
                 </div>
 
                 <div class="datatable" >
                     <pv-datatable :value="dataEvent" style="border: 3px solid rgba(3, 83, 151, 1);" class="text">
 
-                        <pv-column field="title" header="Nombre del evento"></pv-column>
-                        <pv-column field="hour" header="Hora"></pv-column>
-                        <pv-column field="day" header="Dia" ></pv-column>
-                        <pv-column field="month" header="Mes" ></pv-column>
+                        <pv-column field="title" header="Name of the event"></pv-column>
+                        <pv-column field="hour" header="Hour"></pv-column>
+                        <pv-column field="day" header="Day" ></pv-column>
+                        <pv-column field="month" header="Month" ></pv-column>
 
                     </pv-datatable>
 
@@ -29,13 +29,13 @@
                     <div class="card flex justify-content-center">
 
                         <div class="card flex justify-content-center">
-                            <pv-button class="botones" label="Registrar Evento" />
+                            <pv-button class="botones" label="Register Event" />
                         </div>
 
                         <pv-divider layout="vertical" />
 
                         <div class="card flex justify-content-center">
-                            <pv-button class="botones" label="Historial de Eventos" />
+                            <pv-button class="botones" label="Event History" />
                         </div>
 
                     </div>

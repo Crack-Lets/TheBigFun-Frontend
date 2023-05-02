@@ -17,38 +17,38 @@
                 <div class="info textos">
 
                     <div class="flex flex-column gap-2">
-                        <label for="username" class="title" >Usuario</label>
+                        <label for="username" class="title" >Username</label>
                         <pv-inputext type="text" class="container" id="username" v-model="user.username" aria-describedby="username-help" />
-                        <small id="username-help" class="espacio">Ingresa tu nombre de usuario.</small>
+                        <small id="username-help" class="espacio">Enter your username.</small>
                     </div>
 
                     <div class="flex flex-column gap-2">
-                        <label for="password" class="title">Contraseña</label>
+                        <label for="password" class="title">Password</label>
                         <pv-inputext  type="text" class="container" id="password" v-model="user.password" toggleMask aria-describedby="password-help" />
-                        <small id="password-help" class="espacio">Ingresa tu contraseña.</small>
+                        <small id="password-help" class="espacio">Enter your password.</small>
                     </div>
 
                     <div class="flex flex-column gap-2">
-                        <label for="fullname" class="title">Nombre</label>
+                        <label for="fullname" class="title">Name</label>
                         <pv-inputext type="text" class="container" id="name" v-model="user.fullname" aria-describedby="name-help" />
-                        <small id="name-help" class="espacio">Ingresa tu nombre.</small>
+                        <small id="name-help" class="espacio">Enter your name.</small>
                     </div>
 
                     <div class="flex flex-column gap-2">
-                        <label for="email" class="title">Correo electronico</label>
+                        <label for="email" class="title">Email</label>
                         <pv-inputext type="text" class="container" id="email" v-model="user.email" aria-describedby="email-help" />
-                        <small id="email-help" class="espacio">Ingresa tu correo.</small>
+                        <small id="email-help" class="espacio">Enter your email.</small>
                     </div>
 
                     <div class="flex flex-column gap-2">
                         <label for="doc" class="title">DNI</label>
                         <pv-inputext type="text" class="container" id="dni" v-model="user.doc" aria-describedby="dni-help" />
-                        <small id="dni-help" class="espacio">Ingresa tu DNI.</small>
+                        <small id="dni-help" class="espacio">Enter your DNI.</small>
                     </div>
 
 
                   <div class="button-container flex align-items-center justify-content-center" >
-                    <pv-button type="submit" :disabled="isDisabled" class="justify-content-center" label="Registrarse" @click="saveUser" style="width: 153px; height: 50px; border-radius: 25px;"/>
+                    <pv-button type="submit" :disabled="isDisabled" class="justify-content-center" label="Sign up" @click="saveUser" style="width: 153px; height: 50px; border-radius: 25px;"/>
                   </div>
 
 <!--                    <router-link :to="{name:'home',params:{abcd:4}}" class="button-container flex align-items-center justify-content-center" >
