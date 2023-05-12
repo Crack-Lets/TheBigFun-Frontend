@@ -50,7 +50,8 @@ export default {
         { label: 'About Us', to: '/aboutUs' },
         { label: 'Events', to: '/events' },
         { label: 'Sign Up', to: '/userRegister' },
-        { label: 'Sign In', to: '/userLogin' },
+        //{ label: 'Sign In', to: '/userLogin' },
+        { label: 'Create Event', to: '/createEvent' }
       ],
       currentUser:{}
     }

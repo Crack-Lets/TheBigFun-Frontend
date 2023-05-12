@@ -37,22 +37,34 @@
       "aforo": "130"
     },
     {
-      "id": 5,
-      "name": "Algo Inutil",
-      "img": "https://www.cultura.gob.ar/media/uploads/algo_inutil_redes_2023_cuadrada.png",
-      "date": "23/06/2023",
-      "hour": "9pm",
-      "cost": "12$",
-      "aforo": "90"
+      "name": "Adele",
+      "date": "27/05/2023",
+      "hour": "10pm",
+      "cost": "70$",
+      "address": "Av tacna",
+      "img": "https://media.self.com/photos/58b89e5f79321416880b02de/1:1/w_950,h_950,c_limit/adele-fireworks-concert.jpg",
+      "description": "Adele concert",
+      "typeTicket": {
+        "name": "VIP",
+        "code": "vip"
+      },
+      "aforo": 100,
+      "id": 5
     },
     {
-      "id": 6,
-      "name": "Algo Inutil",
-      "img": "https://www.cultura.gob.ar/media/uploads/algo_inutil_redes_2023_cuadrada.png",
-      "date": "23/06/2023",
-      "hour": "9pm",
-      "cost": "12$",
-      "aforo": "90"
+      "name": "Calamaro Concert",
+      "date": "12/09/2023",
+      "hour": "10pm",
+      "address": "Av Tacna 123",
+      "img": "https://images.sk-static.com/images/media/img/col3/20230105-204716-594182.jpg",
+      "description": "Best moments",
+      "typeTicket": {
+        "name": "Estándar",
+        "code": "est"
+      },
+      "cost": "40$",
+      "aforo": 100,
+      "id": 6
     }
   ],
   "users": [
@@ -87,6 +99,15 @@
       "email": "isasor@gmail.com",
       "doc": "87654321",
       "id": 4
+    },
+    {
+      "username": "pedropicapiedra",
+      "password": "pedropicapiedra",
+      "fullname": "Pedro Picapiedra",
+      "email": "pedropicapiedra@yahoo.com",
+      "doc": "12332188",
+      "id": 5
     }
-  ]
+  ],
+  "organizers": []
 }

@@ -79,6 +79,7 @@ export default {
       user: {},
       currentUser: {},
       usersApi: new UsersApiService(),
+      errors:[],
       //isDisabled:true,
 
     }
@@ -93,7 +94,8 @@ export default {
       console.log(this.user)
       this.usersApi.create(this.user).then()
           .catch(e => {
-            console.log(e)
+            console.log(e);
+            this.errors.push(e);
           });
       this.currentUser = this.user
       this.user = {};

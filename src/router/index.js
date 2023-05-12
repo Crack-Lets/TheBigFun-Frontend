@@ -7,6 +7,7 @@ import FaqContentComponent from "../components/faq-content.component.vue";
 import VieweventsContentComponent from "../components/viewevents-content.component.vue";
 import OrganizerprofileComponent from "../components/organizerprofile-component.vue";
 import EventdetailsContentComponent from "../components/eventdetails-content.component.vue";
+import RegistereventContentComponent from "../components/registerevent-content.component.vue";
 
 
 const router=createRouter({
@@ -54,6 +55,11 @@ const router=createRouter({
             path: '/eventdetails/:event',
             name: 'eventdetails',
             component: EventdetailsContentComponent,
+        },
+        {
+            path: '/createEvent',
+            name: 'createEvent',
+            component: RegistereventContentComponent,
         }
         // {
         //     path: '/home/:abcd',

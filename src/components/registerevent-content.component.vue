@@ -5,25 +5,30 @@
             <h1>Register event:</h1>
         </div>
         <div class="body">
-            <div class="imgContainer">
+<!--            <div class="imgContainer">
                 <img :src="eventImg" alt="user picture" aria-label="Assistant Image" >
                 <br>
                 <pv-button class="button" label="Subir Imagen"  />
             </div>
-            <br>
+            <br>-->
 
             <div class="inputData"  >
-                <pv-inputext  v-model="nameEvent" type="text" class="inputText p-inputtext-lg" placeholder="Name Event"/>
+                <pv-inputext  v-model="event.name" type="text" class="inputText p-inputtext-lg" placeholder="Name Event"/>
                 <div class="hourdate">
-                    <pv-calendar class="calendar " v-model="dateEvent" input-id="dateformat" placeholder="dd-mm-aaaa"/>
-                    <pv-calendar class="hour" id="calendar-timeonly" v-model="timeEvent" timeOnly placeholder="hh:mm" />
+<!--                    <pv-calendar class="calendar" v-model="date" dateFormat="dd/mm/yy" input-id="dateformat" placeholder="dd-mm-aaaa"/>
+                    <pv-calendar class="hour" id="calendar-timeonly" showTime hourFormat="12" v-model="event.hour" timeOnly placeholder="hh:mm" />-->
+                  <pv-inputext  v-model="event.date" type="text" class="inputText2 p-inputtext-lg" placeholder="Date"/>
+                  <pv-inputext  v-model="event.hour" type="text" class="inputText2 p-inputtext-lg" placeholder="Hour"/>
                 </div>
-                <pv-inputext v-model="addressEvent" type="text" class="inputText p-inputtext-lg" placeholder="Address"  />
-                <pv-textarea class="textarea" v-model="description" rows="2" cols="25" placeholder="Event description"/>
-                <pv-dropdown v-model="selectedTickets" :options="typeTickets" optionLabel="name" placeholder="Type of ticket" class="dropdown w-full md:w-18rem" />
-                <pv-inputnumber class="maxcapacity" v-model="maxCapacity" inputId="minmax" :min="0" :max="100" placeholder="Max Capacity" />
+                <pv-inputext v-model="event.address" type="text" class="inputText p-inputtext-lg" placeholder="Address"  />
+
+                <pv-inputext v-model="event.img" type="text" class="inputText p-inputtext-lg" placeholder="Img link"  />
+                <pv-textarea class="textarea" v-model="event.description" rows="2" cols="25" placeholder="Event description"/>
+                <pv-dropdown v-model="event.typeTicket" :options="typeTickets" optionLabel="name" placeholder="Type of ticket" class="dropdown w-full md:w-18rem" />
+                <pv-inputext v-model="event.cost" type="text" class="inputText2 p-inputtext-lg" placeholder="Ticket Price"  />
+                <pv-inputnumber class="maxcapacity" v-model="event.aforo" inputId="minmax" :min="0" :max="100" placeholder="Max Capacity" />
                 <br>
-                <pv-button class="regtevent" label="Registar evento" />
+                <pv-button class="regtevent" @click="saveEvent" label="Register" />
             </div>
         </div>
 
@@ -32,11 +37,17 @@
 </template>
 
 <script>
+import {EventsApiService} from "../thebigfun/services/events-api.service";
+
 export default {
     name: "registerevent-content",
     data(){
         return{
-            eventImg: "https://www.anayainfantilyjuvenil.com/images/libros/grande/9788469833728-la-vida-es-sueno-clasicos-hispanicos.jpg",
+          typeTickets:[
+            {name:'Estándar', code: 'est'},
+            {name:'VIP', code: 'vip'}
+          ],
+/*            eventImg: "https://www.anayainfantilyjuvenil.com/images/libros/grande/9788469833728-la-vida-es-sueno-clasicos-hispanicos.jpg",
             nameEvent:null,
             addressEvent:null,
             descriptionEvent:null,
@@ -44,13 +55,29 @@ export default {
             timeEvent:null,
             description: null,
             selectedTickets:null,
-            typeTickets:[
-                {name:'Estándar', code: 'est'},
-                {name:'VIP', code: 'vip'}
-            ],
-            maxCapacity: null,
+
+            maxCapacity: null,*/
+          event:{},
+          eventsApi:new EventsApiService(),
+          errors:[],
+
+
         }
-    }
+    },
+
+
+  methods:{
+      saveEvent(){
+        console.log("Event : ",this.event);
+        this.eventsApi.createEvent(this.event).then()
+            .catch(e => {
+              console.log(e);
+              this.errors.push(e);
+            });
+        this.event = {};
+      }
+  }
+
 }
 </script>
 
@@ -110,6 +137,18 @@ img{
     border: 1px solid rgba(3, 83, 151, 1);
 
 }
+
+.inputText2 {
+  width: 50%;
+  height: 40px;
+  margin-bottom: 20px;
+  font-family: "Nunito", sans-serif;
+  font-style: normal;
+  border-radius: 5px;
+  border: 1px solid rgba(3, 83, 151, 1);
+
+}
+
 .hourdate{
     display:flex;
     width:400px;
