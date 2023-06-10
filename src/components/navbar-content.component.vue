@@ -3,7 +3,7 @@
   <pv-toolbar class="shadow-3 pt-2 pb-2">
 
     <template #start>
-      <img src="src/assets/resources/logo.png">
+      <img src="https://cdn.discordapp.com/attachments/1088535056072585349/1116951446114533456/logo.png">
       <h2 class="mt-0 mb-0 pt-0 pb-0">The Big Fun</h2>
 
     </template>

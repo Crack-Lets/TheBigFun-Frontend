@@ -72,7 +72,7 @@ export default {
     data() {
         return{
             userData:{
-                organizerimage: "src/assets/resources/organizer.png",
+                organizerimage: "https://cdn.discordapp.com/attachments/1088535056072585349/1116952607479574558/organizer.png",
                 username: " LuisLuisama",
                 fullname: " Luis Andres Sanchez Luisama",
                 email: " luis.sanchez.luisama@gmail.com",

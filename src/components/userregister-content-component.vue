@@ -9,7 +9,7 @@
             <div class="card flex justify-content-center">
 
                 <p class="arriba">
-                    <img alt="user header" src="src/assets/resources/logo.png" />
+                    <img alt="user header" src="https://cdn.discordapp.com/attachments/1088535056072585349/1116951446114533456/logo.png" />
                 </p>
 
                 <pv-divider layout="vertical" />
