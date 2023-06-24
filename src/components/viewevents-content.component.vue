@@ -10,13 +10,12 @@
                 <div class="eventsContainer" v-for="event in events" :key="event.id">
                     <div class="tableStyle">
                         <pv-datatable class="eventTable" :value="[event]" style="border: 3px solid rgba(3, 83, 151, 1); width:1000px">
-                            <pv-column field="date" header="Date"></pv-column>
-                            <pv-column field="hour" header="Hour"></pv-column>
+                            <pv-column field="datetime" header="Date"></pv-column>
                             <pv-column field="name" header="Event Name"></pv-column>
                             <pv-column field="cost" header="Price"></pv-column>
-                            <pv-column field="aforo" header="Capacity"></pv-column>
+                            <pv-column field="capacity" header="Capacity"></pv-column>
                         </pv-datatable>
-                      <router-link :to="{name:'eventdetails', params:{event:JSON.stringify(event)}}">
+                      <router-link :to="{name:'eventdetails', params:{id:(event.id)}}">
                         <pv-button>View details</pv-button>
                       </router-link>
 
@@ -38,6 +37,7 @@ export default
             events: [],
             errors:[],
             eventsApi:new EventsApiService(),
+
         };
     },
     created() {

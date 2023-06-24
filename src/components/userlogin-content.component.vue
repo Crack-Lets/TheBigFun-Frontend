@@ -1,8 +1,11 @@
+
 <template>
+
+
 
     <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
 
-    <div class="card" >
+    <div class="content">
 
         <pv-scrollpanel style="width: 100%; height: 475px">
 
@@ -54,8 +57,11 @@
 </template>
 
 <script>
+import NavbarContent from "@/components/navbar-content.component.vue";
+
 export default {
     name: "userlogin-content.component",
+  components: {NavbarContent},
 
     data(){
         return{
@@ -98,6 +104,7 @@ export default {
     background: #ffffff;
     margin-left:30px;
     font-family: "Nunito", sans-serif;
+
 }
 
 .uptButton {

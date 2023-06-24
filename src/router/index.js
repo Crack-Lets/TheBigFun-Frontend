@@ -8,6 +8,8 @@ import VieweventsContentComponent from "../components/viewevents-content.compone
 import OrganizerprofileComponent from "../components/organizerprofile-component.vue";
 import EventdetailsContentComponent from "../components/eventdetails-content.component.vue";
 import RegistereventContentComponent from "../components/registerevent-content.component.vue";
+import PaymentconfirmationContentComponent from "@/components/paymentconfirmation-content.component.vue";
+import buyticketsContentComponent from "@/components/buytickets-content.component.vue";
 
 
 const router=createRouter({
@@ -52,7 +54,7 @@ const router=createRouter({
             component: OrganizerprofileComponent,
         },
         {
-            path: '/eventdetails/:event',
+            path: '/eventdetails/:id',
             name: 'eventdetails',
             component: EventdetailsContentComponent,
         },
@@ -60,6 +62,16 @@ const router=createRouter({
             path: '/createEvent',
             name: 'createEvent',
             component: RegistereventContentComponent,
+        },
+        {
+            path: '/paymentConfirmation/:id',
+            name: 'paymentconfirmation',
+            component: PaymentconfirmationContentComponent,
+        },
+        {
+            path: '/payment/:id',
+            name: 'payment',
+            component: buyticketsContentComponent,
         }
         // {
         //     path: '/home/:abcd',

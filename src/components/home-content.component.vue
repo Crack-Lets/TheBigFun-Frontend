@@ -12,8 +12,8 @@
                 <div class="eventsContainer">
                     <div class="prueba" v-for="(event, index) in events">
 
-                        <router-link :to="{name:'eventdetails', params:{event:JSON.stringify(event)}}">
-                          <img :src="event.img" :alt="event.name" aria-label="theater image" style="width:250px; border-radius:30px; "/>
+                        <router-link :to="{name:'eventdetails', params:{id:(event.id)}}">
+                          <img :src="event.image" :alt="event.name" aria-label="theater image" style="width:250px; border-radius:30px; "/>
                           <h2 class="eventName">{{event.name}}</h2>
                             <pv-button>View details</pv-button>
                           <div v-if="(index+1)%3 ==0" class="row-end"></div>

@@ -18,7 +18,7 @@
 
                     <div class="flex flex-column gap-2">
                         <label for="username" class="title" >Username</label>
-                        <pv-inputext type="text" class="container" id="username" v-model="user.username" aria-describedby="username-help" />
+                        <pv-inputext type="text" class="container" id="username" v-model="user.userName" aria-describedby="username-help" />
                         <small id="username-help" class="espacio">Enter your username.</small>
                     </div>
 
@@ -30,7 +30,7 @@
 
                     <div class="flex flex-column gap-2">
                         <label for="fullname" class="title">Name</label>
-                        <pv-inputext type="text" class="container" id="name" v-model="user.fullname" aria-describedby="name-help" />
+                        <pv-inputext type="text" class="container" id="name" v-model="user.name" aria-describedby="name-help" />
                         <small id="name-help" class="espacio">Enter your name.</small>
                     </div>
 
@@ -87,25 +87,35 @@ export default {
 
   created() {
     console.log("primero", this.user.fullname);
+
   },
 
   methods: {
     saveUser() {
-      console.log(this.user)
-      this.usersApi.create(this.user).then()
+      console.log(this.user);
+
+      this.usersApi.create(this.user)
+          .then(response => {
+            this.currentUser = response.data;
+            const userId = this.currentUser.id;
+
+            console.log("currentUser:", this.currentUser);
+            console.log("userID:", userId);
+            localStorage.setItem('userId', userId);
+
+            this.user = {};
+          })
           .catch(e => {
             console.log(e);
             this.errors.push(e);
           });
-      this.currentUser = this.user
-      this.user = {};
-      console.log("currentUser : ",this.currentUser)
     }
+
   },
 
   computed:{
     isDisabled(){
-      if(this.user.fullname===undefined || this.user.username===undefined || this.user.password===undefined|| this.user.email===undefined|| this.user.doc===undefined) {
+      if(this.user.name===undefined || this.user.userName===undefined || this.user.password===undefined|| this.user.email===undefined|| this.user.doc===undefined) {
         return true;
       }
       else {

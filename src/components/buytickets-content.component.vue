@@ -5,58 +5,72 @@
             <h1>BUY TICKETS</h1>
         </div>
         <div class="button-container flex align-items-end">
-            <pv-button class="payButton" >
-                <a class ="buttonText" href="">Pay by credit card</a>
+          <router-link :to="{name:'paymentconfirmation', params:{id:(eventId)}}">
+            <pv-button @click="savePaymentToEventAttendee" class="payButton" >
+              <a class ="buttonText" >Pay by credit card</a>
             </pv-button>
+          </router-link>
         </div>
         <div class="imgContainer">
-            <img :src="eventImg" alt="user picture" style="width: 200px" />
+            <img :src="event.image" alt="user picture" style="width: 200px" />
         </div>
         <br>
         <div class="datatable">
-            <pv-datatable class= "tablex" :value="tableData" style="border: 3px solid rgba(3, 83, 151, 1)">
-                <pv-column field="date" header="Date"></pv-column>
-                <pv-column field="hour" header="Hour"></pv-column>
-                <pv-column field="nameEvent" header="Event Name"></pv-column>
-                <pv-column field="price" header="Price"></pv-column>
+            <pv-datatable class= "tablex" :value="[event]" style="border: 3px solid rgba(3, 83, 151, 1)">
+                <pv-column field="datetime" header="Date"></pv-column>
+                <pv-column field="name" header="Event Name"></pv-column>
+                <pv-column field="cost" header="Price"></pv-column>
                 <pv-column field="capacity" header="Capacity"></pv-column>
-                <pv-column field="disponibility" header ="Disponibility"></pv-column>
             </pv-datatable>
         </div>
-        <div class="drop ">
-            <h3>Number of tickets</h3>
-            <pv-dropdown v-model="selectedQuantity" :options="quantitys" optionLabel="quantity" class="dropdown  md:w-18rem"/>
-        </div>
+
 
     </div>
 </template>
 
 <script>
+import {EventsApiService} from "@/thebigfun/services/events-api.service";
+
 export default {
     name: "buy-tickets-content",
     data(){
         return{
-            eventImg: "https://www.anayainfantilyjuvenil.com/images/libros/grande/9788469833728-la-vida-es-sueno-clasicos-hispanicos.jpg",
-            tableData:[
-                {
-                    date: "25/04/2023",
-                    hour:"8:00pm",
-                    nameEvent:"Obra teatral 'La vida es un sueño'",
-                    price: "25",
-                    capacity: "200",
-                    disponibility: "83",
-                }
-            ],
-            selectedQuantity: null,
-            quantitys:[
-                {quantity: '1', code: 'one'},
-                {quantity: '2', code: 'two'},
-                {quantity: '3', code: 'three'},
-                {quantity: '4', code: 'four'},
-                {quantity: '5',  code: 'five'},
-            ],
+          eventsApi:  new EventsApiService(),
+          event: {},
+          eventId:JSON.parse(this.$route.params.id)
+
         }
+    },
+  created() {
+    this.getEventsById();
+    console.log("Created")
+
+  },
+  methods:{
+    getEventsById(){
+      this.eventsApi.getEventsById(this.eventId)
+          .then(response=>{
+            this.event=response.data;
+            console.log("Datos recuperados : ",response.data)
+          })
+          .catch(e=>{
+            this.errors.push(e)
+          })
+    },
+    savePaymentToEventAttendee(){
+      const payment = {
+        eventId: this.eventId,
+        date: this.event.datetime
+      };
+      console.log("Event : ",this.event);
+      this.eventsApi.addPaymentToEventAttendee(1,this.eventId, payment).then()
+          .catch(e => {
+            console.log(e);
+            this.errors.push(e);
+          });
+      this.event = {};
     }
+  }
 }
 </script>
 <style scoped>

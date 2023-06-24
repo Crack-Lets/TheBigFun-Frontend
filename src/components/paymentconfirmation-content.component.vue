@@ -5,17 +5,15 @@
             <h1>SUCCESSFUL PURCHASE</h1>
         </div>
         <div class="imgContainer">
-            <img :src="eventImg" alt="user picture" aria-label="Assistant Image" style="margin-left: 10px"/>
-            <img :src="eventQr" alt="user picture" aria-label="Assistant Image" style="margin-right: 10px;"/>
+            <img :src="event.image" alt="user picture" aria-label="Assistant Image" style="margin-left: 10px"/>
+          <img src="https://user-images.githubusercontent.com/4993276/69906263-8d535d00-139f-11ea-8ee8-6f21a41bc60e.jpeg" alt="user picture" aria-label="Assistant Image" style="margin-left: 10px"/>
         </div>
         <br>
+
         <div class="datatable" >
-            <pv-datatable :value="tableData" style="border: 3px solid rgba(3, 83, 151, 1);" >
-                <pv-column field="date" header="Date"></pv-column>
-                <pv-column field="hour" header="Hour"></pv-column>
-                <pv-column field="nameEvent" header="Name Event" ></pv-column>
-                <pv-column field="qTikects" header="Number of tickets" ></pv-column>
-                <pv-column field="qrCode" header="QR CODE"> </pv-column>
+            <pv-datatable :value="[event]" style="border: 3px solid rgba(3, 83, 151, 1);" >
+                <pv-column field="datetime" header="Date"></pv-column>
+                <pv-column field="name" header="Name Event" ></pv-column>
             </pv-datatable>
         </div>
 
@@ -27,18 +25,36 @@
 </template>
 
 <script>
+import {EventsApiService} from "@/thebigfun/services/events-api.service";
+
 export default {
     name: "paymentconfirmation-content",
     data(){
         return{
-            eventImg: "https://www.anayainfantilyjuvenil.com/images/libros/grande/9788469833728-la-vida-es-sueno-clasicos-hispanicos.jpg",
-            eventQr: "https://www.qr-generator.nu/qrcode.svg",
-            tableData:[
-                {date: "25/04/2023",hour:"8:00pm", nameEvent:"Obra teatral 'La vida es un sueño'", qTikects: "2", qrCode:"https://www.qr-generator.nu/qrcode.svg"}
-            ]
-        }
-    }
 
+          eventsApi:  new EventsApiService(),
+          event: {},
+          eventId:JSON.parse(this.$route.params.id)
+        }
+    },
+  created() {
+    this.getEventsById();
+    console.log("Created")
+
+  },
+  methods:{
+    getEventsById(){
+      this.eventsApi.getEventsById(this.eventId)
+          .then(response=>{
+            this.event=response.data;
+            console.log("Datos recuperados : ",response.data)
+          })
+          .catch(e=>{
+            this.errors.push(e)
+          })
+    },
+
+  }
 }
 </script>
 

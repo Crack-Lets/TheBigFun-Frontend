@@ -6,19 +6,24 @@
         </div>
         <div class="body">
             <div class="imgContainer">
-                <img :src="event.img" alt="Event Image" aria-label="Event Image" >
+                <img :src="event.image" alt="Event Image" aria-label="Event Image" >
             </div>
             <br>
             <div class="information">
-                Date: {{event.date}}
-                <br>
-                Hour: {{event.hour}}
-                <br>
-                Price: {{event.cost}}
-                <br>
-                Capacity: {{event.aforo}}
-                <br>
-                <pv-button class="button" label="Buy" />
+              District: {{event.district}}
+              <br>
+              Address: {{event.address}}
+              <br>
+              Date: {{event.datetime}}
+              <br>
+              Price: {{event.cost}}
+              <br>
+              Capacity: {{event.capacity}}
+              <br>
+              <router-link :to="{name:'payment', params:{id:(eventId)}}" >
+                <pv-button @click="saveEventToAttendee" class="button" label="Buy" />
+              </router-link>
+
             </div>
         </div>
 
@@ -26,26 +31,45 @@
 </template>
 
 <script>
+import {EventsApiService} from "@/thebigfun/services/events-api.service";
+
 export default {
   name: "eventdetails-content",
 
   data(){
     return{
-      event:JSON.parse(this.$route.params.event)
+      eventsApi:  new EventsApiService(),
+      event: {},
+      eventId:JSON.parse(this.$route.params.id)
+    }
+  },
+  created() {
+    this.getEventsById();
+    console.log("Created")
+
+  },
+  methods:{
+    getEventsById(){
+      this.eventsApi.getEventsById(this.eventId)
+          .then(response=>{
+            this.event=response.data;
+            console.log("Datos recuperados : ",response.data)
+          })
+          .catch(e=>{
+            this.errors.push(e)
+          })
+    },
+    saveEventToAttendee(){
+      console.log("Event : ",this.event);
+      this.eventsApi.addEventToAttendee(1,this.eventId).then()
+          .catch(e => {
+            console.log(e);
+            this.errors.push(e);
+          });
+      this.event = {};
     }
   }
-/*  data() {
-    return {
-                  nameEvent: "Chatarrita",
-                  img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqx5gurXNgoiEx8PNnw-AJm7bJz3F1-TLpgA&usqp=CAU",
-                  date: "12/10/2023",
-                  hour: "8pm",
-                  cost: "20$",
-                  capacity: "200",
-                  location: "Av. las fresias 158 la molina",
 
-    }
-  }*/
 }
 </script>
 

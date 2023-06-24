@@ -15,19 +15,15 @@
             <div class="inputData"  >
                 <pv-inputext  v-model="event.name" type="text" class="inputText p-inputtext-lg" placeholder="Name Event"/>
                 <div class="hourdate">
-<!--                    <pv-calendar class="calendar" v-model="date" dateFormat="dd/mm/yy" input-id="dateformat" placeholder="dd-mm-aaaa"/>
-                    <pv-calendar class="hour" id="calendar-timeonly" showTime hourFormat="12" v-model="event.hour" timeOnly placeholder="hh:mm" />-->
-                  <pv-inputext  v-model="event.date" type="text" class="inputText2 p-inputtext-lg" placeholder="Date"/>
-                  <pv-inputext  v-model="event.hour" type="text" class="inputText2 p-inputtext-lg" placeholder="Hour"/>
+                  <pv-inputext  v-model="event.datetime" type="text" class="inputText2 p-inputtext-lg" placeholder="Date"/>
                 </div>
                 <pv-inputext v-model="event.address" type="text" class="inputText p-inputtext-lg" placeholder="Address"  />
 
-                <pv-inputext v-model="event.img" type="text" class="inputText p-inputtext-lg" placeholder="Img link"  />
-                <pv-textarea class="textarea" v-model="event.description" rows="2" cols="25" placeholder="Event description"/>
-                <pv-dropdown v-model="event.typeTicket" :options="typeTickets" optionLabel="name" placeholder="Type of ticket" class="dropdown w-full md:w-18rem" />
-                <pv-inputext v-model="event.cost" type="text" class="inputText2 p-inputtext-lg" placeholder="Ticket Price"  />
-                <pv-inputnumber class="maxcapacity" v-model="event.aforo" inputId="minmax" :min="0" :max="100" placeholder="Max Capacity" />
-                <br>
+                <pv-inputext v-model="event.image" type="text" class="inputText p-inputtext-lg" placeholder="Img link"  />
+                <pv-textarea class="textarea" v-model="event.district" rows="2" cols="25" placeholder="District Location"/>
+                <pv-inputext v-model="event.cost" type="number" class="inputText2 p-inputtext-lg" placeholder="Ticket Price"  />
+                <pv-inputnumber class="maxcapacity" v-model="event.capacity" inputId="minmax" :min="0" :max="100" placeholder="Max Capacity" />
+              <br>
                 <pv-button class="regtevent" @click="saveEvent" label="Register" />
             </div>
         </div>
@@ -60,22 +56,21 @@ export default {
           event:{},
           eventsApi:new EventsApiService(),
           errors:[],
-
-
+          userId: localStorage.getItem('userId')
         }
     },
 
 
   methods:{
-      saveEvent(){
-        console.log("Event : ",this.event);
-        this.eventsApi.createEvent(this.event).then()
-            .catch(e => {
-              console.log(e);
-              this.errors.push(e);
-            });
-        this.event = {};
-      }
+    saveEvent(){
+      console.log("Event : ",this.event);
+      this.eventsApi.createEventToOrganizer(this.userId,this.event).then()
+          .catch(e => {
+            console.log(e);
+            this.errors.push(e);
+          });
+      this.event = {};
+    }
   }
 
 }
