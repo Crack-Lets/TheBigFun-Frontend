@@ -101,10 +101,16 @@ export default {
     },
     filter(){
       const foundOrganizer = this.organizers.find(organizer => organizer.userName === this.user);
+      const foundAttendee = this.attendees.find(attendee => attendee.userName === this.user);
       if (foundOrganizer) {
         console.log("User found in organizers:", foundOrganizer);
       } else {
         console.log("User not found in organizers.");
+        if (foundAttendee) {
+          console.log("User found in Attendee:", foundAttendee);
+        } else {
+          console.log("User not found in Attendee.");
+        }
       }
     }
 

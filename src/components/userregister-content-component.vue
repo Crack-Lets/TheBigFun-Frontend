@@ -43,7 +43,6 @@
                   <div class="card flex justify-content-center">
                     <pv-dropdown v-model="selectedUser" :options="typeUser" optionLabel="name" placeholder="Select Type of User" class="w-full md:w-14rem" />
                   </div>
-                  <h1>{{selectedUser}}</h1>
 
                   <div class="button-container flex align-items-center justify-content-center" >
                     <pv-button type="submit" :disabled="isDisabled" class="justify-content-center" label="Sign up" @click="saveUser" style="width: 153px; height: 50px; border-radius: 25px;"/>
@@ -95,15 +94,16 @@ export default {
               this.currentUser = response.data;
               const userId = this.currentUser.id;
 
-              console.log("currentAttendee:", this.currentUser);
+              /*console.log("currentAttendee:", this.currentUser);
               console.log("userID:", userId);
-              localStorage.setItem('userId', userId);
+              localStorage.setItem('userId', userId);*/
 
               this.user = {};
             })
             .catch(e => {
               console.log(e);
               this.errors.push(e);
+              alert("Error to create Attendee User")
             });
       }else {
         this.usersApi.createOrganizers(this.user)
@@ -111,15 +111,16 @@ export default {
               this.currentUser = response.data;
               const userId = this.currentUser.id;
 
-              console.log("currentUser:", this.currentUser);
+              /*console.log("currentUser:", this.currentUser);
               console.log("userID:", userId);
-              localStorage.setItem('userId', userId);
+              localStorage.setItem('userId', userId);*/
 
               this.user = {};
             })
             .catch(e => {
               console.log(e);
               this.errors.push(e);
+              alert("Error to create Organizer User")
             });
       }
 

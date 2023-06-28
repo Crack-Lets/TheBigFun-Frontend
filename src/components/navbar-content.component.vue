@@ -59,7 +59,7 @@ export default {
                 {label: "Sign up", to: "userRegister"},
             ],
             currentUser: {
-                authenticated: true,
+                authenticated: false,
                 role: "",
                 fullname: "",
             },
