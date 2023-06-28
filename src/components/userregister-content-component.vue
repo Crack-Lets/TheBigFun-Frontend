@@ -114,8 +114,8 @@ export default {
               /*console.log("currentUser:", this.currentUser);
               console.log("userID:", userId);
               localStorage.setItem('userId', userId);*/
-
               this.user = {};
+              this.$router.push("/");
             })
             .catch(e => {
               console.log(e);
