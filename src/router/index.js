@@ -10,6 +10,8 @@ import EventdetailsContentComponent from "../components/eventdetails-content.com
 import RegistereventContentComponent from "../components/registerevent-content.component.vue";
 import PaymentconfirmationContentComponent from "@/components/paymentconfirmation-content.component.vue";
 import buyticketsContentComponent from "@/components/buytickets-content.component.vue";
+import userloginContentComponent from "@/components/userlogin-content.component.vue";
+import homeContentComponent from "@/components/home-content.component.vue";
 
 
 const router=createRouter({
@@ -18,21 +20,26 @@ const router=createRouter({
     routes:[
 
         {
+            path: '/userLogin',
+            name: 'userLogin',
+            alias: '/',
+            component: UserloginContentComponent
+        },
+
+
+        {
             path: '/home',
             name: 'home',
-            alias: '/',
-            component: HomeContentComponent
+            component: homeContentComponent
         },
+
+
         {
             path: '/aboutUs',
             name: 'aboutUs',
             component: AboutusContentComponent
         },
-        {
-            path: '/userLogin',
-            name: 'userLogin',
-            component: UserloginContentComponent
-        },
+
         {
             path: '/userRegister',
             name: 'userRegister',
