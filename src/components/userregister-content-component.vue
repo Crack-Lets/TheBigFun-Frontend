@@ -99,6 +99,7 @@ export default {
               localStorage.setItem('userId', userId);*/
 
               this.user = {};
+              this.$router.push("/");
             })
             .catch(e => {
               console.log(e);
