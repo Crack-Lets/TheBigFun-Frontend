@@ -14,25 +14,23 @@
 
 
     <template #end>
-<!--      <pv-button class="pvb" label="Home" aria-label="Home" text/>
-      <pv-button class="pvb" label="About Us" aria-label="About Us" text/>
-      <pv-button class="pvb" label="Events" aria-label="Events" text/>
-      <pv-button class="pvb" label="Sign Up" aria-label="Sign Up" text/>
-      <pv-button class="pvb" label="Sign In" aria-label="Sign In" severity="danger"/>-->
 
-      <div class="flex-column">
-        <router-link v-for="item in items"
-                     :to="item.to"
-                     custom
-                     v-slot="{navigate, href}"
-                     :key="item.label">
-          <pv-button
-              class="p-button-text"
-              :href="href"
-              @click="navigate">{{ item.label }}</pv-button>
-        </router-link>
-      </div>
+        <div class="flex-column">
+            <router-link v-if="currentUser.role === 'organizer'" v-for="item in organizerItems"
+                         :to="item.to" custom v-slot="{navigate, href}" :key="item.label">
+                <pv-button class="p-button-text" :href="href" @click="navigate">{{ item.label }}</pv-button>
+            </router-link>
+            <router-link v-if="currentUser.role === 'attendee'" v-for="item in attendeeItems"
+                         :to="item.to" custom v-slot="{navigate, href}" :key="item.label">
+                <pv-button class="p-button-text" :href="href" @click="navigate">{{ item.label }}</pv-button>
+            </router-link>
+            <router-link v-if="!currentUser.authenticated" v-for="item in unauthenticatedItems" :to="item.to" custom v-slot="{navigate, href}" :key="item.label">
+                <pv-button class="p-button-text" :href="href" @click="navigate">{{ item.label }}</pv-button>
+            </router-link>
+            <pv-button v-if="currentUser.authenticated" class="pvb" label="Log out" aria-label="Log out"
+                       text @click="logOut" />
 
+        </div>
     </template>
 
   </pv-toolbar>
@@ -40,23 +38,45 @@
 </template>
 
 <script>
+
 export default {
-  name: "navbar-content",
+    name: "navbar-content",
 
-  data() {
-    return {
-      items: [
-        { label: 'Home', to: '/home' },
-        { label: 'About Us', to: '/aboutUs' },
-        { label: 'Events', to: '/events' },
-        { label: 'Sign Up', to: '/userRegister' },
-        //{ label: 'Sign In', to: '/userLogin' },
-        { label: 'Create Event', to: '/createEvent' }
-      ],
-      currentUser:{}
-    }
-  }
+    data() {
+        return {
+            organizerItems: [
+                {label: "Create Event", to: "/createEvent"},
+                {label: "Events", to: "/events"},
+                {label: "Home", to: "/home"},
+            ],
+            attendeeItems: [
+                {label: "Home", to: "/home"},
+                {label: "Events", to: "/events"},
+                {label: "About Us", to: "/aboutUs"},
+            ],
+            unauthenticatedItems:[
+                {label: "About us", to: "/aboutUs"},
+                {label: "Sign up", to: "userRegister"},
+            ],
+            currentUser: {
+                authenticated: true,
+                role: "",
+                fullname: "",
+            },
+        };
+    },
+    methods: {
+        logOut() {
+            this.currentUser = {
+                authenticated: false,
+                role: "",
+                fullname: "",
+            };
 
+            this.$router.push("/");
+        },
+
+    },
 }
 </script>
 
