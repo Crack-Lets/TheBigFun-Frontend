@@ -43,7 +43,7 @@
 
                         <div class="button-container flex align-items-center justify-content-center" >
                             <pv-button  class="uptButton justify-content-center" style="width: 153px; height: 50px; border-radius: 25px;">
-                                <a href="" >Sign up</a>
+                                <a href="/userRegister" >Sign up</a>
                             </pv-button>
                         </div>
 
