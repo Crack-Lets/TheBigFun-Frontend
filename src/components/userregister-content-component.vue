@@ -40,20 +40,14 @@
                         <small id="email-help" class="espacio">Enter your email.</small>
                     </div>
 
-                    <div class="flex flex-column gap-2">
-                        <label for="doc" class="title">DNI</label>
-                        <pv-inputext type="text" class="container" id="dni" v-model="user.doc" aria-describedby="dni-help" />
-                        <small id="dni-help" class="espacio">Enter your DNI.</small>
-                    </div>
-
+                  <div class="card flex justify-content-center">
+                    <pv-dropdown v-model="selectedUser" :options="typeUser" optionLabel="name" placeholder="Select Type of User" class="w-full md:w-14rem" />
+                  </div>
+                  <h1>{{selectedUser}}</h1>
 
                   <div class="button-container flex align-items-center justify-content-center" >
                     <pv-button type="submit" :disabled="isDisabled" class="justify-content-center" label="Sign up" @click="saveUser" style="width: 153px; height: 50px; border-radius: 25px;"/>
                   </div>
-
-<!--                    <router-link :to="{name:'home',params:{abcd:4}}" class="button-container flex align-items-center justify-content-center" >
-                        <pv-button type="submit" :disabled="isDisabled" class="justify-content-center" label="Registrarse" @click="saveUser" style="width: 153px; height: 50px; border-radius: 25px;"/>
-                    </router-link>-->
 
                 </div>
 
@@ -65,23 +59,25 @@
 
 <script>
 import {UsersApiService} from "../thebigfun/services/users-api.service";
+import Dropdown from "primevue/dropdown";
 
 export default {
   name: "userregister-content-component",
+  components: {Dropdown},
 
   data() {
     return {
-      /*            user:null,
-            password:null,
-            name:null,
-            email:null,
-            dni:null,*/
+
       user: {},
       currentUser: {},
       usersApi: new UsersApiService(),
       errors:[],
       //isDisabled:true,
-
+      selectedUser: null,
+      typeUser: [
+        { name: 'Attendee', code: 'UA' },
+        { name: 'Organizer', code: 'UO' },
+      ]
     }
   },
 
@@ -93,29 +89,47 @@ export default {
   methods: {
     saveUser() {
       console.log(this.user);
+      if(this.selectedUser==='UA'){
+        this.usersApi.createAttendee(this.user)
+            .then(response => {
+              this.currentUser = response.data;
+              const userId = this.currentUser.id;
 
-      this.usersApi.create(this.user)
-          .then(response => {
-            this.currentUser = response.data;
-            const userId = this.currentUser.id;
+              console.log("currentAttendee:", this.currentUser);
+              console.log("userID:", userId);
+              localStorage.setItem('userId', userId);
 
-            console.log("currentUser:", this.currentUser);
-            console.log("userID:", userId);
-            localStorage.setItem('userId', userId);
+              this.user = {};
+            })
+            .catch(e => {
+              console.log(e);
+              this.errors.push(e);
+            });
+      }else {
+        this.usersApi.createOrganizers(this.user)
+            .then(response => {
+              this.currentUser = response.data;
+              const userId = this.currentUser.id;
 
-            this.user = {};
-          })
-          .catch(e => {
-            console.log(e);
-            this.errors.push(e);
-          });
+              console.log("currentUser:", this.currentUser);
+              console.log("userID:", userId);
+              localStorage.setItem('userId', userId);
+
+              this.user = {};
+            })
+            .catch(e => {
+              console.log(e);
+              this.errors.push(e);
+            });
+      }
+
     }
 
   },
 
   computed:{
     isDisabled(){
-      if(this.user.name===undefined || this.user.userName===undefined || this.user.password===undefined|| this.user.email===undefined|| this.user.doc===undefined) {
+      if(this.user.name===undefined || this.user.userName===undefined || this.user.password===undefined|| this.user.email===undefined) {
         return true;
       }
       else {
