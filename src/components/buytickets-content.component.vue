@@ -63,7 +63,7 @@ export default {
         date: this.event.datetime
       };
       console.log("Event : ",this.event);
-      this.eventsApi.addPaymentToEventAttendee(1,this.eventId, payment).then()
+      this.eventsApi.addPaymentToEventAttendee(Number(localStorage.getItem('userID')),this.eventId, payment).then()
           .catch(e => {
             console.log(e);
             this.errors.push(e);

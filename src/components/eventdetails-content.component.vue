@@ -61,7 +61,7 @@ export default {
     },
     saveEventToAttendee(){
       console.log("Event : ",this.event);
-      this.eventsApi.addEventToAttendee(1,this.eventId).then()
+      this.eventsApi.addEventToAttendee(Number(localStorage.getItem('userID')),this.eventId).then()
           .catch(e => {
             console.log(e);
             this.errors.push(e);

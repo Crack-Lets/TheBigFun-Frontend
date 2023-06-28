@@ -13,4 +13,10 @@ export class UsersApiService{
     getAttendees(){
         return http.get('/attendees');
     }
+    getOrganizerEvents(id){
+        return http.get(`/organizers/${id}/events`);
+    }
+    getAttendeeEvents(id){
+        return http.get(`/attendees/${id}/events`);
+    }
 }

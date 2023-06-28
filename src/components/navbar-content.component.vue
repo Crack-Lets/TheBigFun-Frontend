@@ -39,6 +39,7 @@
 
 <script>
 
+
 export default {
     name: "navbar-content",
 
@@ -72,12 +73,40 @@ export default {
                 role: "",
                 fullname: "",
             };
+          localStorage.setItem('login', 'false');
+          localStorage.removeItem('userID');
+          localStorage.removeItem('typeUser');
+          localStorage.removeItem('username');
 
             this.$router.push("/");
         },
+      Validate() {
+          if(localStorage.getItem('login')==='false'){
+            this.currentUser = {
+              authenticated: false,
 
+            };
+
+          }else {
+            this.currentUser = {
+              authenticated: true,
+              role: localStorage.getItem('typeUser'),
+              fullname: localStorage.getItem('username'),
+            };
+
+          }
+
+
+      }
     },
+  created() {
+    // Llamar a validate() cada 2 segundos (2000 milisegundos)
+    setInterval(this.Validate, 2000);
+  },
+
 }
+
+
 </script>
 
 

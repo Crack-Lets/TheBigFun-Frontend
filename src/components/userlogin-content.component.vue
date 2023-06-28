@@ -104,10 +104,24 @@ export default {
       const foundAttendee = this.attendees.find(attendee => attendee.userName === this.user);
       if (foundOrganizer) {
         console.log("User found in organizers:", foundOrganizer);
+        this.$router.push("/home");
+        localStorage.setItem('typeUser', 'organizer');
+        localStorage.setItem('userID', foundOrganizer.id)
+        localStorage.setItem('username', foundOrganizer.userName)
+        localStorage.setItem('login', 'true')
+        console.log("User Organizer ID :", localStorage.getItem('userID'));
+        console.log("User username :", localStorage.getItem('username'));
       } else {
         console.log("User not found in organizers.");
         if (foundAttendee) {
           console.log("User found in Attendee:", foundAttendee);
+          this.$router.push("/home");
+          localStorage.setItem('typeUser', 'attendee');
+          localStorage.setItem('userID', foundAttendee.id)
+          localStorage.setItem('username', foundAttendee.userName)
+          localStorage.setItem('login', 'true')
+          console.log("User Attendee ID :", localStorage.getItem('userID'));
+          console.log("User username :", localStorage.getItem('username'));
         } else {
           console.log("User not found in Attendee.");
         }

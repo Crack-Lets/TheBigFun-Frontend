@@ -29,6 +29,7 @@
 
 <script>
 import {EventsApiService} from "../thebigfun/services/events-api.service";
+import {UsersApiService} from "@/thebigfun/services/users-api.service";
 export default
 {
     name: "view-events.component",
@@ -37,11 +38,17 @@ export default
             events: [],
             errors:[],
             eventsApi:new EventsApiService(),
+            userApi:new UsersApiService(),
 
         };
     },
     created() {
-        this.getEvents();
+      if(localStorage.getItem('typeUser')==='organizer'){
+        this.getOrganizerEvents();
+      }else {
+        this.getAttendeeEvents();
+      }
+
         console.log("Created")
     },
     methods:{
@@ -54,7 +61,28 @@ export default
                 .catch(e=>{
                     this.errors.push(e)
                 })
-        }
+        },
+        getOrganizerEvents(){
+          const Id = Number(localStorage.getItem('userID'))
+          this.userApi.getOrganizerEvents(Id) .then(response=>{
+            this.events=response.data;
+            console.log("Datos recuperados : ",response.data)
+          })
+              .catch(e=>{
+                this.errors.push(e)
+              })
+        },
+      getAttendeeEvents(){
+        const Id = Number(localStorage.getItem('userID'))
+        this.userApi.getAttendeeEvents(Id) .then(response=>{
+          this.events=response.data;
+          console.log("Datos recuperados : ",response.data)
+        })
+            .catch(e=>{
+              this.errors.push(e)
+            })
+      },
+
     }
 }
 </script>

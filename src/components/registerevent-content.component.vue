@@ -34,6 +34,7 @@
 
 <script>
 import {EventsApiService} from "../thebigfun/services/events-api.service";
+import {UsersApiService} from "@/thebigfun/services/users-api.service";
 
 export default {
     name: "registerevent-content",
@@ -56,11 +57,17 @@ export default {
           event:{},
           eventsApi:new EventsApiService(),
           errors:[],
-          userId: localStorage.getItem('userId')
+          userId: localStorage.getItem('userID'),
+          organizers:[],
+          usersApi:new UsersApiService(),
         }
     },
 
-
+  created() {
+      this.getAll();
+      this.userId = localStorage.getItem('userID');
+      console.log('iddd', this.userId)
+  },
   methods:{
     saveEvent(){
       console.log("Event : ",this.event);
@@ -70,7 +77,18 @@ export default {
             this.errors.push(e);
           });
       this.event = {};
-    }
+    },
+    getAll()
+    {
+      this.usersApi.getOrganizers()
+          .then(response=>{
+            this.organizers=response.data;
+            console.log("Organizers recovered : ",response.data)
+          })
+          .catch(e=>{
+            this.errors.push(e)
+          });
+      }
   }
 
 }
