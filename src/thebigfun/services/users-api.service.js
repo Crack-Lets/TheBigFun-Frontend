@@ -5,6 +5,12 @@ export class UsersApiService{
         return http.post('/organizers',user);
     }
     createAttendee(user){
-        return http.post('/attendee',user);
+        return http.post('/attendees',user);
+    }
+    getOrganizers(){
+        return http.get('/organizers');
+    }
+    getAttendees(){
+        return http.get('/attendees');
     }
 }

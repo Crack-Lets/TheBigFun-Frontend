@@ -89,7 +89,7 @@ export default {
   methods: {
     saveUser() {
       console.log(this.user);
-      if(this.selectedUser==='UA'){
+      if(this.selectedUser.code==='UA'){
         this.usersApi.createAttendee(this.user)
             .then(response => {
               this.currentUser = response.data;

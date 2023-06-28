@@ -34,15 +34,15 @@
                     <div class="card flex justify-content-center">
 
                         <div class="button-container flex align-items-center justify-content-center" >
-                            <pv-button class="uptButton justify-content-center" style="width: 153px; height: 50px; border-radius: 25px;">
-                                <a href="" >Sign in</a>
+                            <pv-button @click="filter" class="uptButton justify-content-center" style="width: 153px; height: 50px; border-radius: 25px;">
+                                <a >Sign in</a>
                             </pv-button>
                         </div>
 
                         <pv-divider layout="vertical" />
 
                         <div class="button-container flex align-items-center justify-content-center" >
-                            <pv-button class="uptButton justify-content-center" style="width: 153px; height: 50px; border-radius: 25px;">
+                            <pv-button  class="uptButton justify-content-center" style="width: 153px; height: 50px; border-radius: 25px;">
                                 <a href="" >Sign up</a>
                             </pv-button>
                         </div>
@@ -58,17 +58,58 @@
 
 <script>
 import NavbarContent from "@/components/navbar-content.component.vue";
+import {UsersApiService} from "@/thebigfun/services/users-api.service";
 
 export default {
     name: "userlogin-content.component",
+
   components: {NavbarContent},
 
     data(){
         return{
             user:null,
             password:null,
+            organizers:[],
+            attendees:[],
+            usersApi:new UsersApiService(),
         }
+    },
+  created() {
+      this.getAll();
+
+  },
+  methods:{
+
+    getAll()
+    {
+      this.usersApi.getOrganizers()
+        .then(response=>{
+          this.organizers=response.data;
+          console.log("Organizers recovered : ",response.data)
+        })
+        .catch(e=>{
+          this.errors.push(e)
+        })
+      this.usersApi.getAttendees()
+          .then(response=>{
+            this.attendees=response.data;
+            console.log("Attendees recovered : ",response.data)
+          })
+          .catch(e=>{
+            this.errors.push(e)
+          })
+    },
+    filter(){
+      const foundOrganizer = this.organizers.find(organizer => organizer.userName === this.user);
+      if (foundOrganizer) {
+        console.log("User found in organizers:", foundOrganizer);
+      } else {
+        console.log("User not found in organizers.");
+      }
     }
+
+  }
+
 }
 </script>
 
