@@ -52,17 +52,17 @@
       "id": 5
     },
     {
-      "name": "Calamaro Concert",
-      "date": "12/09/2023",
-      "hour": "10pm",
-      "address": "Av Tacna 123",
+      "name": "Calamaro Fest",
+      "date": "2023-12-10",
+      "hour": "5pm",
+      "address": "Estadio San Marcos",
       "img": "https://images.sk-static.com/images/media/img/col3/20230105-204716-594182.jpg",
       "description": "Best moments",
       "typeTicket": {
         "name": "Estándar",
         "code": "est"
       },
-      "cost": "40$",
+      "cost": "30$",
       "aforo": 100,
       "id": 6
     }
